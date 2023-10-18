@@ -1,5 +1,42 @@
-#include <iostream>
+#include <iostream>             //include serve para incluir uma biblioteca com um grupo de códigos
+#include <cmath>                //inclui uma biblioteca matemática
+#include "asminhascontas.h"            
 using namespace std;
+
+int a=2, b=3;
+
+int main(){
+    cout << log(16) << endl;
+    cout << oDobro(2) << endl;
+    xpto();
+    return 0;
+
+}
+
+/*
+int main(){
+    cout << log(b) << endl;             log = logarítmo
+    return 0;
+
+}
+*/
+
+/*
+int main(){
+    cout << max(a,b) << endl;
+    return 0;
+
+}
+*/
+
+/*
+int main(){
+    cout << pow(4,2) << endl;               pow = eleva
+    return 0;
+
+}
+*/
+
 
 int NUM_PORT_SENS_HUM = 5;   
 
@@ -262,3 +299,5 @@ int main()
     return 0;
 }
 */
+
+ 
