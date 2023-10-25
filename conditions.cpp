@@ -129,7 +129,7 @@ int main(){
     int numSorte=22;
     int num=0;
     while(numSorte != num){
-        cout << "Digite o número da sorte?" << endl;
+        cout << "Qual é o número da sorte?" << endl;
         cin >> num;
         if(numSorte > num){
             cout << "O número da sorte é maior do que:" << num << endl;
@@ -139,6 +139,6 @@ int main(){
             cout << "Parabéns, você acertou!" << endl;
         }
     }
-    cout << "Parabéns, você acertou!" << endl;
+    cout << "Acabou o jogo!" << endl;
     return 0;
 }
