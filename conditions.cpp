@@ -29,7 +29,7 @@ int main(){
  * @return int
 */
 
-
+/*
 int main(){
     
     int num;
@@ -44,3 +44,5 @@ int main(){
     }
     return 0;
 }
+*/
+
