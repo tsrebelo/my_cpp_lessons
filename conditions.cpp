@@ -124,6 +124,7 @@ int main(){
 }
 */
 
+/*
 int main(){
     
     int numSorte=22;
@@ -140,5 +141,16 @@ int main(){
         }
     }
     cout << "Acabou o jogo!" << endl;
+    return 0;
+}
+*/
+
+//rand = aleatório
+
+int main(){
+    
+    int num=0;
+    
+    cout << rand() << endl;
     return 0;
 }
