@@ -46,3 +46,56 @@ int main(){
 }
 */
 
+/*
+int main(){
+    
+    int num;
+    cout << "Digite um número: " << endl;
+    cin >> num;
+
+    switch (num)
+    {
+        case 1:
+        cout << "O número é 1" << endl;
+        break;
+
+        case 2:
+        cout << "O número é 2" << endl;
+        break;
+
+    default:
+        cout << "O número não é 1 nem é 2" << endl;
+        break;
+    }
+    return 0;
+}
+*/
+
+/*
+int main(){
+    
+    int num;
+    int result;
+    cout << "Digite um número: " << endl;
+    cin >> num;
+
+    result = num % 2;
+
+    switch (result)
+    {
+        case 0:
+        cout << "O número é par" << endl;
+        break;
+
+    default:
+        cout << "O número não é par" << endl;
+        break;
+    }
+    return 0;
+}
+*/
+
+int main(){
+
+    return 0;
+}

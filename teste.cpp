@@ -15,6 +15,7 @@ const double PI = 3.141592653589793238463;      //constante (não se pode altera
 int x = 2, y=3, z=14;
 int minutosPorHora=60;
 int numero;                                     //variavel nule
+//tudo entre "()" vai ser avaliado
 
 //tipo de variavel  nome da variavel = valor da variavel
 
