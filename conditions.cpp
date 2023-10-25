@@ -171,3 +171,25 @@ int main(){
 
     return 0;
 */
+
+int main(){
+    
+    srand((unsigned) time(0));
+    int numSorte = 1+(rand()%100);
+    int num = 0;
+
+    while(numSorte != num){
+        cout << "Qual é o número da sorte?" << endl;
+        cin >> num;
+        if(numSorte > num){
+            cout << "O número da sorte é maior do que:" << num << endl;
+        }else if(numSorte < num){
+            cout << "O número da sorte é menor do que:" << num << endl;
+        }else{
+            cout << "Parabéns, você acertou!" << endl;
+        }
+    }
+    cout << "Acabou o jogo!" << endl;
+
+    return 0;
+}
