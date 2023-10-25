@@ -3,6 +3,27 @@
 #include "asminhascontas.h"            
 using namespace std;
 
+int NUM_PORT_SENS_HUM = 5;   
+
+
+int O_MEU_NUMERO = 10;                          //números inteiros
+double O_MEU_NUMERO_REAL = 10.5;                //números reais
+char O_MEU_CARACTER = 'a';                      //caracteres
+string O_MEU_TEXTO = "isto é um texto";         //texto
+bool O_MEU_BOOLEANO = true;                     //booloeano
+const double PI = 3.141592653589793238463;      //constante (não se pode alterar)
+int x = 2, y=3, z=14;
+int minutosPorHora=60;
+int numero;                                     //variavel nule
+
+//tipo de variavel  nome da variavel = valor da variavel
+
+int sensorTemperatura = 10;                     //variavel inteira (pode-se alterar)
+const double INTERVALO_TEMPO = 1000;            
+
+int myBool = 1; //true
+//char teste = '1';
+
 int a=2, b=3;
 
 int main(){
@@ -36,31 +57,6 @@ int main(){
 
 }
 */
-
-
-int NUM_PORT_SENS_HUM = 5;   
-
-
-int O_MEU_NUMERO = 10;                          //números inteiros
-double O_MEU_NUMERO_REAL = 10.5;                //números reais
-char O_MEU_CARACTER = 'a';                      //caracteres
-string O_MEU_TEXTO = "isto é um texto";         //texto
-bool O_MEU_BOOLEANO = true;                     //booloeano
-const double PI = 3.141592653589793238463;      //constante (não se pode alterar)
-int x = 2, y=3, z=14;
-int minutosPorHora=60;
-int numero;                                     //variavel nule
-
-//tipo de variavel  nome da variavel = valor da variavel
-
-int sensorTemperatura = 10;                     //variavel inteira (pode-se alterar)
-const double INTERVALO_TEMPO = 1000;            
-
-int myBool = 1; //true
-//char teste = '1';
-
-
-
 
 
 /*
