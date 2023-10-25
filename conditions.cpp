@@ -96,6 +96,14 @@ int main(){
 */
 
 int main(){
+    
+    int num=0;
+
+
+    while(num < 5){
+        cout << "Digite um número: " << endl;
+        cin >> num;
+    }
 
     return 0;
 }
