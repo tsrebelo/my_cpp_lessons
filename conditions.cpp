@@ -39,7 +39,7 @@ int main(){
 
     if(num >= 0){
         cout << "é positivo" << endl;
-    }else if(num < 0){
+    }else{
         cout << "é negativo" << endl;
     }
     return 0;
