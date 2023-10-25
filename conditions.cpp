@@ -95,6 +95,7 @@ int main(){
 }
 */
 
+/*
 int main(){
     
     int num=0;
@@ -105,5 +106,18 @@ int main(){
         cin >> num;
     }
 
+    return 0;
+}
+*/
+
+int main(){
+    
+    int numSorte=22;
+    int num=0;
+    while(numSorte != num){
+        cout << "Digite um número: " << endl;
+        cin >> num;
+    }
+    cout << "Parabéns, você acertou!" << endl;
     return 0;
 }
