@@ -110,6 +110,7 @@ int main(){
 }
 */
 
+/*
 int main(){
     
     int numSorte=22;
@@ -117,6 +118,26 @@ int main(){
     while(numSorte != num){
         cout << "Digite um número: " << endl;
         cin >> num;
+    }
+    cout << "Parabéns, você acertou!" << endl;
+    return 0;
+}
+*/
+
+int main(){
+    
+    int numSorte=22;
+    int num=0;
+    while(numSorte != num){
+        cout << "Digite o número da sorte?" << endl;
+        cin >> num;
+        if(numSorte > num){
+            cout << "O número da sorte é maior do que:" << num << endl;
+        }else if(numSorte < num){
+            cout << "O número da sorte é maior do que:" << num << endl;
+        }else{
+            cout << "Parabéns, você acertou!" << endl;
+        }
     }
     cout << "Parabéns, você acertou!" << endl;
     return 0;
