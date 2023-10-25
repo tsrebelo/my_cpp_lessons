@@ -174,9 +174,11 @@ int main(){
 
 int main(){
     
-    srand((unsigned) time(0));
-    int numSorte = 1+(rand()%100);
     int num = 0;
+    srand((unsigned) time(0));
+    
+    int numSorte = 1+(rand()%100);
+    
 
     while(numSorte != num){
         cout << "Qual é o número da sorte?" << endl;
