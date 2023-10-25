@@ -1,4 +1,7 @@
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
+
 using namespace std;
 
 
@@ -145,7 +148,8 @@ int main(){
 }
 */
 
-//rand = aleatório
+/*
+rand = aleatório
 
 int main(){
     
@@ -166,4 +170,4 @@ int main(){
     cout << "Acabou o jogo!" << endl;
 
     return 0;
-}
+*/
