@@ -24,6 +24,7 @@ const double INTERVALO_TEMPO = 1000;
 int myBool = 1; //true
 //char teste = '1';
 
+/*
 int a=2, b=3;
 
 int main(){
@@ -33,6 +34,7 @@ int main(){
     return 0;
 
 }
+*/
 
 /*
 int main(){
