@@ -172,6 +172,7 @@ int main(){
     return 0;
 */
 
+/*
 int main(){
     
     int num = 0;
@@ -192,6 +193,37 @@ int main(){
         }
     }
     cout << "Acabou o jogo!" << endl;
+
+    return 0;
+}
+*/
+
+int main(){
+    
+    int num = 0;
+    int numTentativasMáximas = 5;
+    int tentativas = 0;
+    srand((unsigned) time(0));
+    
+    int numSorte = 1+(rand()%100);
+    
+
+    while(numSorte != num && tentativas < numTentativasMáximas){
+        cout << "Tentativa #" << tentativas + 1 << "Qual é o número da sorte?" << endl;
+        cin >> num;
+        if(numSorte > num){
+            cout << "O número da sorte é maior do que:" << num << endl;
+        }else if(numSorte < num){
+            cout << "O número da sorte é menor do que:" << num << endl;
+        }else{
+            cout << "Parabéns, você acertou!" << endl;
+            break;
+        }
+        tentativas++;
+    }
+        if (tentativas == numTentativasMáximas){
+    cout << "Quase lá! O número que tinhas de colocar era:" << numSorte << endl;
+        }
 
     return 0;
 }
