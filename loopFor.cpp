@@ -108,11 +108,10 @@ int main(){
     // indice            0       1       2       3       4
     string cars[] = {"Volvo", "BMW", "Ford", "Mazda", "Tesla"};
     string cars2[] = {};
+    
 
-int xpto;
-xpto = 25;
-
-
+cars2[0] ="";
+ 
 
     cout << cars[2] << "\n";
 
