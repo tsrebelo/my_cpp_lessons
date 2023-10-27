@@ -209,6 +209,7 @@ int main(){
     
         cout << "Qual é o teu nome?" << endl;
         cin >> name;
+        
     while(numSorte != num && tentativas < numTentativasMáximas){
         cout << "Tentativa #" << tentativas + 1 << "Qual é o número da sorte?" << endl;
         cin >> num;
