@@ -50,10 +50,10 @@ cout << "inicio do ciclo For" << endl;
 int main(){
 cout << "inicio do ciclo For" << endl;
     for (int n=0; n<=10; n++){
-        cout << n << endl;
         if (n == 4){
             continue;
         }
+        cout << n << endl;
     }
     cout << "fim do ciclo For" << endl;
     return 0;
