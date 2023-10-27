@@ -104,12 +104,24 @@ int main(){
 }
 */
 
+/*
 int main(){
     // indice            0       1       2       3       4
     string cars[] = {"Volvo", "BMW", "Ford", "Mazda", "Tesla"};
     //cout << cars[2] << "\n";
     cars[2] = "Opel";
+    //{"Volvo", "BMW", "Ford", "Mazda", "Tesla"}
     cout << cars[2] << "\n";
 
     return 0;
 }
+*/
+
+/*
+int main(){
+    int numeros[] = {1,2,3,4,5};                    //são 4bytes para cada elemnto do araid
+    cout << sizeof(numeros) << endl;
+    
+
+    return 0;
+*/
