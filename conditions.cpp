@@ -198,6 +198,8 @@ int main(){
 }
 */
 
+
+//TRABALHOS
 int main(){
     
     int num = 0;
@@ -229,3 +231,11 @@ int main(){
 
     return 0;
 }
+
+
+//int main(){
+//    int chave[5];
+//    int estrelas[2];
+//
+//    return 0;
+//}
