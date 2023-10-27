@@ -107,12 +107,9 @@ int main(){
 int main(){
     // indice            0       1       2       3       4
     string cars[] = {"Volvo", "BMW", "Ford", "Mazda", "Tesla"};
-    string cars2[] = {};
-    
-
-cars2[0] ="";
- 
-
+    //cout << cars[2] << "\n";
+    cars[2] = "Opel";
     cout << cars[2] << "\n";
 
+    return 0;
 }
