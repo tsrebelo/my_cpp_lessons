@@ -41,7 +41,7 @@ cout << "inicio do ciclo For" << endl;
             break;
         }
     }
-    cout << "inicio do ciclo For" << endl;
+    cout << "fim do ciclo For" << endl;
     return 0;
 }
 */
@@ -52,9 +52,9 @@ cout << "inicio do ciclo For" << endl;
     for (int n=0; n<=10; n++){
         cout << n << endl;
         if (n == 4){
-            break;
+            continue;
         }
     }
-    cout << "inicio do ciclo For" << endl;
+    cout << "fim do ciclo For" << endl;
     return 0;
 }
