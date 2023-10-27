@@ -109,6 +109,7 @@ int main(){
     string cars[] = {"Volvo", "BMW", "Ford", "Mazda", "Tesla"};
     string cars2[] = {};
 
+int xpto;
 
 
     cout << cars[2] << "\n";
