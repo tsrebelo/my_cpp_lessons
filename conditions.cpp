@@ -203,11 +203,12 @@ int main(){
     int num = 0;
     int numTentativasMáximas = 5;
     int tentativas = 0;
-    srand((unsigned) time(0));
-    
+    srand (static_cast<unsigned> (time(0)));
+    int name;
     int numSorte = 1+(rand()%100);
     
-
+        cout << "Qual é o teu nome?" << endl;
+        cin >> name;
     while(numSorte != num && tentativas < numTentativasMáximas){
         cout << "Tentativa #" << tentativas + 1 << "Qual é o número da sorte?" << endl;
         cin >> num;
