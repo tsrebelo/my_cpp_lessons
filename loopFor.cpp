@@ -60,3 +60,18 @@ cout << "inicio do ciclo For" << endl;
 }
 */
 
+int main(){
+    
+
+    int i = 10;
+
+   // while (i != 10){                          
+   //     cout << "Olá" << endl;
+   // }
+
+    do {                                        
+        cout << "Olá" << endl;
+    } while (i != 10);
+
+    return 0;
+}
