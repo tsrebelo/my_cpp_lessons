@@ -110,6 +110,8 @@ int main(){
     string cars2[] = {};
 
 int xpto;
+xpto = 25;
+
 
 
     cout << cars[2] << "\n";
