@@ -90,6 +90,7 @@ int main(){
 }
 */
 
+/*
 int main(){
 
     int chave[5];
@@ -100,4 +101,16 @@ int main(){
     }
 
     return 0;
+}
+*/
+
+int main(){
+    // indice            0       1       2       3       4
+    string cars[] = {"Volvo", "BMW", "Ford", "Mazda", "Tesla"};
+    string cars2[] = {};
+
+
+
+    cout << cars[2] << "\n";
+
 }
