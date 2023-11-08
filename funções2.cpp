@@ -78,6 +78,16 @@ int main(){
 
 
 
+
+
+
+
+
+
+
+
+
+
 int f(int x){
     return x*x;                     //para "x*x" não dar erro coloca-se "int x" entre nos parenteses de "int f(){"
 };
