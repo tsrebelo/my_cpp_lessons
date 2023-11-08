@@ -40,6 +40,7 @@ int main(){
 
 /**segunda maneira**/
 
+/*
 struct pessoa   
 {
     string nome;
@@ -51,7 +52,7 @@ struct pessoa
 
 };
 
-/*
+
 int main(){
 
     pessoa p1, p2, p3;
@@ -71,14 +72,27 @@ int main(){
 
 
 
-int quadrado(){
+int f(int x){
+    return x*x;                     //para "x*x" não dar erro coloca-se "int x" entre nos parenteses de "int f(){"
 
+};
+
+
+void ola(){                         //usa-se "void" quando a função não retora nada
+    cout << "Olá!" << endl;
+};
+
+void msgError(string msg){
+    cout << "-------------------" << endl;
+    cout << "Error: " << msg << endl;
+    cout << "-------------------" << endl;
 };
 
 int main(){
 
-
-
+    ola();                          //run do código é "Olá!"
+    cout << f(5) << endl;           //run do código dá "25"
+    cout << f(10) << endl;          //run do código dá "100"
 
 
 }
