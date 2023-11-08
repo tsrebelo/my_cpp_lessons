@@ -5,7 +5,7 @@
 using namespace std;
 
 
-/*
+
 int a = 10, b = 12, c = 9;
 
 int main(){
@@ -22,7 +22,7 @@ int main(){
 
     return 0;
 }
-*/
+
 
 
 
@@ -32,7 +32,7 @@ int main(){
  * @return int
 */
 
-/*
+
 int main(){
     
     int num;
@@ -47,9 +47,9 @@ int main(){
     }
     return 0;
 }
-*/
 
-/*
+
+
 int main(){
     
     int num;
@@ -72,9 +72,9 @@ int main(){
     }
     return 0;
 }
-*/
 
-/*
+
+
 int main(){
     
     int num;
@@ -96,9 +96,9 @@ int main(){
     }
     return 0;
 }
-*/
 
-/*
+
+
 int main(){
     
     int num=0;
@@ -111,9 +111,9 @@ int main(){
 
     return 0;
 }
-*/
 
-/*
+
+
 int main(){
     
     int numSorte=22;
@@ -125,9 +125,9 @@ int main(){
     cout << "Parabéns, você acertou!" << endl;
     return 0;
 }
-*/
 
-/*
+
+
 int main(){
     
     int numSorte=22;
@@ -146,9 +146,9 @@ int main(){
     cout << "Acabou o jogo!" << endl;
     return 0;
 }
-*/
 
-/*
+
+
 rand = aleatório
 
 int main(){
@@ -170,9 +170,9 @@ int main(){
     cout << "Acabou o jogo!" << endl;
 
     return 0;
-*/
+}
 
-/*
+                            
 int main(){
     
     int num = 0;
@@ -196,4 +196,4 @@ int main(){
 
     return 0;
 }
-*/
+

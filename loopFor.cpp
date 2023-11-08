@@ -2,7 +2,7 @@
 
 using namespace std;
 
-/*
+
 int main(){
     
 
@@ -11,9 +11,9 @@ int main(){
     }
     return 0;
 }
-*/
 
-/*
+
+
 int main(){
     
 
@@ -29,10 +29,10 @@ int main(){
 
     return 0;
 }
-*/
 
 
-/*
+
+
 int main(){
 cout << "inicio do ciclo For" << endl;
     for (int n=0; n<=10; n++){
@@ -44,9 +44,9 @@ cout << "inicio do ciclo For" << endl;
     cout << "fim do ciclo For" << endl;
     return 0;
 }
-*/
 
-/*
+
+
 int main(){
 cout << "inicio do ciclo For" << endl;
     for (int n=0; n<=10; n++){
@@ -58,9 +58,9 @@ cout << "inicio do ciclo For" << endl;
     cout << "fim do ciclo For" << endl;
     return 0;
 }
-*/
 
-/*
+
+
 int main(){
     
 
@@ -76,9 +76,9 @@ int main(){
 
     return 0;
 }
-*/
 
-/*
+
+
 int main(){
 
     int test[4] = {7,8,9,7};
@@ -88,9 +88,9 @@ int main(){
 
     return 0;
 }
-*/
 
-/*
+
+
 int main(){
 
     int chave[5];
@@ -102,9 +102,9 @@ int main(){
 
     return 0;
 }
-*/
 
-/*
+
+
 int main(){
     // indice            0       1       2       3       4
     string cars[] = {"Volvo", "BMW", "Ford", "Mazda", "Tesla"};
@@ -115,13 +115,13 @@ int main(){
 
     return 0;
 }
-*/
 
-/*
+
+
 int main(){
     int numeros[] = {1,2,3,4,5};                    //são 4bytes para cada elemnto do araid
     cout << sizeof(numeros) << endl;
     
 
     return 0;
-*/
+}

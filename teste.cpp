@@ -25,7 +25,7 @@ const double INTERVALO_TEMPO = 1000;
 int myBool = 1; //true
 //char teste = '1';
 
-/*
+
 int a=2, b=3;
 
 int main(){
@@ -35,31 +35,31 @@ int main(){
     return 0;
 
 }
-*/
 
-/*
+
+
 int main(){
     cout << log(b) << endl;             log = logarítmo
     return 0;
 
 }
-*/
 
-/*
+
+
 int main(){
     cout << max(a,b) << endl;
     return 0;
 
 }
-*/
 
-/*
+
+
 int main(){
     cout << pow(4,2) << endl;               pow = eleva
     return 0;
 
 }
-*/
+
 
 
 /*
@@ -67,7 +67,8 @@ int main(){
 *teste
 *
 */
-/** int main()
+
+int main()
 {
 
     cout << "Digita um numero: ";   //imprime no ecrã
@@ -75,7 +76,8 @@ int main(){
     cout << "O numero que digitaste foi: " << numero << endl;
     return 0;
 }
-   */ 
+   
+
     /**
      * @brief
      * 
@@ -96,7 +98,7 @@ int main(){
 
 
 
-/*
+
 int main()
 {
     cout << "Hello \\ World!\t";    // isto é um comentário
@@ -113,11 +115,11 @@ int main()
 
     concatenação = juntar uma ou mais coisas
     % é o resto da sobra da divisão da conta
-*/
+
   
 
 
-/*
+
 int main()
 {
 
@@ -126,11 +128,11 @@ int main()
     cout << a+b << endl;
     return 0;
 }
-*/
 
 
-/*
-tendo em consideração que a área do circulo é PI * raio * raio, calcula a área do circulo com raio 10
+
+
+//tendo em consideração que a área do circulo é PI * raio * raio, calcula a área do circulo com raio 10
 
 
 int main()
@@ -142,9 +144,9 @@ int main()
     
     return 0;
 }
-*/
 
-/*int main()
+
+int main()
 {
     int raio;
     cout << "Qual o raio do circulo?" << endl;
@@ -153,9 +155,9 @@ int main()
     cout << area << endl;
     return 0;
 }
-*/
 
-/*
+
+
 int main()
 {
     int a = 1000;
@@ -164,9 +166,9 @@ int main()
     cout << c << endl;
     return 0;
 }
-*/
 
-/*
+
+
 int main()
 {
     int a = 4;
@@ -177,10 +179,10 @@ int main()
     cout << resultado << endl;
     return 0;
 }
-*/
 
 
-/*
+
+
 int main()
 {
     int a = 4;
@@ -191,9 +193,9 @@ int main()
     cout << resultado << endl;
     return 0;
 }
-*/
 
-/*
+
+
 int main()
 {
     int a = 5;
@@ -204,9 +206,9 @@ int main()
     cout << resultado << endl;
     return 0;
 }
-*/
 
-/*
+
+
 int main()
 {
     int a = 4;
@@ -217,9 +219,9 @@ int main()
     cout << resultado << endl;
     return 0;
 }
-*/
 
-/*
+
+
 int main()
 {
     int a = 4;
@@ -230,9 +232,9 @@ int main()
     cout << resultado << endl;
     return 0;
 }
-*/
 
-/*
+
+
 int main()
 {
     int a = 4;
@@ -243,9 +245,9 @@ int main()
     cout << resultado << endl;
     return 0;
 }
-*/
 
-/*
+
+
 int main()
 {
     int a = 4;
@@ -256,7 +258,7 @@ int main()
     cout << resultado << endl;
     return 0;
 }
-*/
+
 
 /*
 int main()

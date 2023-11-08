@@ -7,7 +7,7 @@ using namespace std;
 
 
 /**primeira maneira**/
-
+/*
 struct                           //é uma declaração de tipo de dado composto que define uma lista de atributos ​​fisicamente agrupados sob um nome
 {
     string nome;
@@ -36,7 +36,7 @@ int main(){
     cout << pessoa1.nome << endl;
 }
 
-
+*/
 
 /**segunda maneira**/
 
@@ -51,6 +51,7 @@ struct pessoa
 
 };
 
+/*
 int main(){
 
     pessoa p1, p2, p3;
@@ -62,4 +63,22 @@ int main(){
     cout << p1.nome << endl;                        //uma vez que o nome não é definido não aparece
     cout << p2.nome << endl;
     cout << p3.nome << endl;           
+}
+*/
+
+
+
+
+
+
+int quadrado(){
+
+};
+
+int main(){
+
+
+
+
+
 }
