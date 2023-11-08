@@ -11,7 +11,7 @@ using namespace std;
 
 
 /**primeira maneira**/
-/*
+
 struct                           //é uma declaração de tipo de dado composto que define uma lista de atributos ​​fisicamente agrupados sob um nome
 {
     string nome;
@@ -37,14 +37,13 @@ int main(){
     pessoa3.rua = "Rua da Maria";
     pessoa3.pais = "Portugal";
 
-    cout << pessoa1.nome << endl;
+    cout << pessoa1.nome << endl;                   //run do código é "João"
 }
 
-*/
+
 
 /**segunda maneira**/
 
-/*
 struct pessoa   
 {
     string nome;
@@ -65,11 +64,11 @@ int main(){
     p1.nome = "João";
     p3.nome = "Maria";
 
-    cout << p1.nome << endl;                        //uma vez que o nome não é definido não aparece
-    cout << p2.nome << endl;
-    cout << p3.nome << endl;           
+    cout << p1.nome << endl;                        //run do código é "João"
+    cout << p2.nome << endl;                        //uma vez que o nome não é definido não aparece
+    cout << p3.nome << endl;                        //run do código é "Maria"
 }
-*/
+
 
 
 
