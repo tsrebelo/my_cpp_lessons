@@ -2,6 +2,10 @@
 using namespace std;
 
 
+/**uma função em programação é uma instrução indentificada com um determinado nome que pode ou não retornar um valor e pode ou não aceitar parâmetro**/
+
+
+
 /*o struct pode ser usado de duas maneiras*/
 
 
@@ -72,14 +76,15 @@ int main(){
 
 
 
+
+
 int f(int x){
     return x*x;                     //para "x*x" não dar erro coloca-se "int x" entre nos parenteses de "int f(){"
-
 };
 
 
-void ola(){                         //usa-se "void" quando a função não retora nada
-    cout << "Olá!" << endl;
+void hi(){                         //usa-se "void" quando a função não retora nada
+    cout << "Hi!" << endl;
 };
 
 void msgError(string msg){
@@ -88,11 +93,25 @@ void msgError(string msg){
     cout << "-------------------" << endl;
 };
 
+void texto(string txt1, string txt2, string txt3){
+    cout << txt1 << endl;
+    cout << txt2 << endl;
+    cout << txt3 << endl;
+};
+
+int multiplicacao(int x, int y=2){
+    return x*y;
+};
+
 int main(){
 
-    ola();                          //run do código é "Olá!"
-    cout << f(5) << endl;           //run do código dá "25"
-    cout << f(10) << endl;          //run do código dá "100"
+    hi();                                   //run do código é "Olá!"
+    msgError("Erro de Conexão");    
+    msgError("Erro de Leitura");
+    texto("Olá", "Mundo", "!");             //run do códido dá "Olá (outra linha) Mundo (outra linha) !"
 
+    cout << f(5) << endl;                   //run do código dá "25"
+    cout << f(10) << endl;                  //run do código dá "100"
 
+    cout << multiplicacao(2) << endl;       //run do código dá "4"
 }
