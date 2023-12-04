@@ -12,7 +12,7 @@ int main(){
 
     cout << food << "\n";                  //outPut "Pizza"
     cout << meal << "\n";                  //outPut "Pizza"
-   
+    cout << &food << "\n";
    
    
     return 0;
