@@ -10,5 +10,10 @@ string &meal = food;
 
 int main(){
 
-    
+    cout << food << "\n";                  //outPut "Pizza"
+    cout << meal << "\n";                  //outPut "Pizza"
+   
+   
+   
+    return 0;
 }
