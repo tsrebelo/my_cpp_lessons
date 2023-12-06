@@ -113,9 +113,6 @@ int main()
     return 0;
 }
 
-    concatenação = juntar uma ou mais coisas
-    % é o resto da sobra da divisão da conta
-
   
 
 
