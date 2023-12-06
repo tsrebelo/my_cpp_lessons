@@ -94,6 +94,9 @@ int main()
     1 BYTE = 8 bits
     concatenação = juntar uma ou mais coisas
     % é o resto da sobra da divisão da conta
+    && - e
+    || - ou
+    != - negação
  */
 
 
