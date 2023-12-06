@@ -96,7 +96,13 @@ int main()
     % é o resto da sobra da divisão da conta
     && - e
     || - ou
-    != - negação
+    ! - negação
+    == - igual
+    < - menor
+    > - maior
+    <= - menor ou igual
+    >= - maior ou igual
+    
  */
 
 
