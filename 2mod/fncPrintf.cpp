@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
+using namespace std;
 
 /*
 int main(){
@@ -11,13 +13,17 @@ int main(){
 }
 */
 
-int main(){
+    string str;
+    int i;
 
-    char nome[50];
+int main(){
 
     system("clear");
 
-    printf("Nome: ");
-    scanf("%s", nome);
-    printf("Olá %s\n", nome);
+    printf("Enter your family name: ");
+    scanf("%79s", str);
+    printf("Enter your age: ");
+    scanf("%d", &i);
+    printf("Mr. %s, %d years old.\n", str, i);
+    return 0;
 }
