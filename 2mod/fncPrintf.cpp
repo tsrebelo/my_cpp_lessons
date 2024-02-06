@@ -21,9 +21,10 @@ int main(){
     system("clear");
 
     printf("Enter your family name: ");
-    scanf("%79s", str);
+    scanf("%s", &str);
     printf("Enter your age: ");
     scanf("%d", &i);
-    printf("Mr. %s, %d years old.\n", str, i);
+    printf("Mr. %s, %d years old.\n", &str, i);
+
     return 0;
 }
