@@ -1,21 +1,33 @@
 #include <iostream>
 using namespace std;
 
+void opcao1(){
+        cout << " n é 1 " << endl;
+}
+
+void opcao2(){
+        cout << " n é 2 " << endl;
+}
+
+void opcao3(){
+        cout << " n é 3 " << endl;
+}
+
 int main(){
 
     int n = 1;
     cin >> n;
     switch(n){
         case 1:
-            cout << " n é 1 " << endl;
+            opcao1();
         break;
 
         case 2:
-            cout << "n é 2" << endl;
+            opcao2();
         break;
 
         case 3:
-            cout << "n é 3" << endl;
+            opcao3();
         break;
 
         default:
@@ -25,3 +37,4 @@ int main(){
 
     return 0;
 }
+
