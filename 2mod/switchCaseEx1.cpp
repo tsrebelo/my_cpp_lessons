@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
 
-int n;
-
 void soma(int a, int b){
     cout << a + b << endl;
 }
@@ -29,6 +27,16 @@ void menu(){
     cout << "4 - Resto da divisão " << endl;
     cout << "======================" << endl;
 }
+
+int getOpcao(){
+    int opcao;
+    cout << "Digite a sua opção: ";
+    cin >> opcao;
+
+    return opcao;
+}
+
+void 
 
 int main(){
 
