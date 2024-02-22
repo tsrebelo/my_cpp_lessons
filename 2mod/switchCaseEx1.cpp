@@ -36,22 +36,22 @@ int getOpcao(){
     return opcao;
 }
 
-void executaCalculo(int n){
+void executaCalculo(int n, int x, int y){
     switch(i){
         case 1:
-        
+        soma(x, y);
             break;
 
         case 2:
-
+        mult(x, y);
             break;
 
         case 3:
-
+            divi(x, y);
             break;
 
         case 4:
-
+        restDiv(x, y);
             break;
 
         default:
