@@ -3,14 +3,13 @@ using namespace std;
 
 int main(){
 
-    switch (expression)
-    {
-    case /* constant-expression */:
-        /* code */
-        break;
-    
-    default:
-        break;
+    int n = 1;
+    cin >> n;
+    switch(n){
+        case 1:
+            cout << " n é 1 " << endl;
+        case 2:
+            cout << "n é 2" << endl;
     }
 
     return 0;
