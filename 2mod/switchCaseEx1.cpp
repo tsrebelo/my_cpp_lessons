@@ -36,8 +36,6 @@ int getOpcao(){
     return opcao;
 }
 
-void 
-
 int main(){
 
 
