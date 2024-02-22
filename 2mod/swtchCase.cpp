@@ -17,8 +17,9 @@ int main(){
         case 3:
             cout << "n é 3" << endl;
         break;
-        
+
         default:
+        cout << " n é diferente de 1, 2 e 3 " << endl;
             break;
     }
 
