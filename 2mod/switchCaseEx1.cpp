@@ -36,8 +36,16 @@ int getOpcao(){
     return opcao;
 }
 
-int main(){
+void executaCalculo(int n){
+    switch(i){
+        case 1:
+        
 
+    }
+}
+
+int main(){
+    menu();
 
     return 0;
 }
