@@ -84,7 +84,12 @@ int getValorY(){
 
 int main(){
 
+    int a;
+    int b;
+    int opcao;
     menu();
+    opcao = getOpcao();
+    //system("clear");
 
     return 0;
 }
