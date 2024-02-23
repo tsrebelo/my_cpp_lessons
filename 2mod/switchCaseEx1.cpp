@@ -64,6 +64,15 @@ void executaCalculo(int opcao, int x, int y){
     }
 }
 
+int getValorX(){
+    
+    int x;
+    cout << "Digite o valor de X: ";
+    cin >> x;
+
+    return x;
+}
+
 int main(){
 
     menu();
