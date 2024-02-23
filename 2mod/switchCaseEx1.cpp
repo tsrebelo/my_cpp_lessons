@@ -38,7 +38,7 @@ int getOpcao(){
     return opcao;
 }
 
-void executaCalculo(int opcao, int x, int y){
+void executaCalculo(int opcao, int y, int x){
 
     switch(opcao){
         case 1:
@@ -84,13 +84,11 @@ int getValorY(){
 
 int main(){
 
-    int a, b, opcao;
+    int opcao;
     menu();
     opcao = getOpcao();
     system("clear");
-    a = getValorX();
-    b = getValorY();
-    executaCalculo(opcao, a, b);
+    executaCalculo(opcao, getValorY(), getValorX());
 
     return 0;
 }
