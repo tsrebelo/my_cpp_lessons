@@ -58,7 +58,7 @@ void executaCalculo(int opcao, int y, int x){
             break;
 
         default:
-
+        cout << "Opção inválida!" << endl;
             break;
 
     }
@@ -76,7 +76,7 @@ int getValorX(){
 int getValorY(){
 
     int y;
-    cout << "Digite o valor de y: ";
+    cout << "Digite o valor de Y: ";
     cin >> y;
 
     return y;
