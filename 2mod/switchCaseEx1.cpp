@@ -62,6 +62,7 @@ void executaCalculo(int n, int x, int y){
 }
 
 int main(){
+    
     menu();
 
     return 0;
