@@ -84,16 +84,13 @@ int getValorY(){
 
 int main(){
 
-    int a;
-    int b;
-    int opcao;
+    int a, b, opcao;
     menu();
     opcao = getOpcao();
     system("clear");
     a = getValorX();
     b = getValorY();
     executaCalculo(opcao, a, b);
-
 
     return 0;
 }
