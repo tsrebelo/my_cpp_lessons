@@ -36,7 +36,7 @@ int getOpcao(){
     return opcao;
 }
 
-void executaCalculo(int n, int x, int y){
+void executaCalculo(int opcao, int x, int y){
     switch(i){
         case 1:
         soma(x, y);
@@ -62,7 +62,7 @@ void executaCalculo(int n, int x, int y){
 }
 
 int main(){
-    
+
     menu();
 
     return 0;
