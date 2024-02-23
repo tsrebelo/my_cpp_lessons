@@ -89,7 +89,11 @@ int main(){
     int opcao;
     menu();
     opcao = getOpcao();
-    //system("clear");
+    system("clear");
+    a = getValorX();
+    b = getValorY();
+    executaCalculo(opcao, a, b);
+
 
     return 0;
 }
