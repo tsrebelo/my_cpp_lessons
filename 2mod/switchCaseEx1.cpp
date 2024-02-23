@@ -18,6 +18,8 @@ void restDiv(int a, int b){
 }
 
 void menu(){
+
+    system("clear");
     cout << "======================" << endl;
     cout << "         MENU" << endl;
     cout << "======================" << endl;
@@ -37,7 +39,7 @@ int getOpcao(){
 }
 
 void executaCalculo(int opcao, int x, int y){
-    
+
     switch(opcao){
         case 1:
         soma(x, y);
