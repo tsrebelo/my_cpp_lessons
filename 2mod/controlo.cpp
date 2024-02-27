@@ -28,7 +28,9 @@ int getLimite(){
 int main(){
 
     system("clear");
-    cout << "Total: " << somaNumeros(getLimite()) << endl;
+    int limite;
+    limite = getLimite();
+    cout << "Total: " << somaNumeros(limite) << endl;
 
     return 0;
 }
