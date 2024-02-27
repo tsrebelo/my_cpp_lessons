@@ -1,19 +1,24 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * @brief Função que calcula a soma dos números até um determinado limite
+ * @param limite - limite para a soma
+ * @return soma dos números até ao limite
+*/
+
+int somaNumeros(int limite){
+
+    int soma = 0;
+    for(int x = 1; x <= limite; x++){
+        soma += x;
+    }
+    return soma;
+}
+
 int main(){
 
-    int num, sum = 0;
+    cout << "Total: " << somaNumeros(10) << endl;
 
-    for(num = 1; num <= 10; num++){
-        if(num%4==0){
-            continue;
-        }
-        sum += num;
-
-    }
-
-    cout << "Total: " << sum << endl;
-    cout << "Número: " << num << endl;
     return 0;
 }
