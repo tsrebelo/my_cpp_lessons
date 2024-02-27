@@ -16,9 +16,19 @@ int somaNumeros(int limite){
     return soma;
 }
 
+int getLimite(){
+
+    int limite;
+    cout << "Qual o limite que V. Exa. quer: ";
+    cin >> limite;
+
+    return limite;
+}
+
 int main(){
 
-    cout << "Total: " << somaNumeros(10) << endl;
+    system("clear");
+    cout << "Total: " << somaNumeros(getLimite()) << endl;
 
     return 0;
 }
