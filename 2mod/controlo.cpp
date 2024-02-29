@@ -8,6 +8,18 @@ struct pessoa{
     long cc;
 };
 
+pessoa editarPessoa(pessoa xpto){
+
+    xpto.cc = 12345;
+    xpto.firstName = "Paulo";
+    xpto.lastName = "Leite";
+    xpto.age = 49;
+
+    cout << xpto.firstName << endl;
+    xpto.firstName = "Zé";
+    return xpto;
+}
+
 /**
  * @brief Função que calcula a soma dos números até um determinado limite
  * @param limite - limite para a soma
@@ -33,6 +45,10 @@ int getLimite(){
 }
 
 int main(){
+
+    pessoa miguel;
+    miguel = editarPessoa(miguel);
+    cout << miguel.firstName << endl;
 
     system("clear");
     int limite;
