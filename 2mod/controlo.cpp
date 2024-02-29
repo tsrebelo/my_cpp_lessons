@@ -1,6 +1,13 @@
 #include <iostream>
 using namespace std;
 
+struct pessoa{
+    int age;
+    string firstName;
+    string lastName;
+    long cc;
+};
+
 /**
  * @brief Função que calcula a soma dos números até um determinado limite
  * @param limite - limite para a soma
