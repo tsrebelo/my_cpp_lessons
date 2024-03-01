@@ -24,3 +24,7 @@ void setScale()
   //ciclos for
 	strip.stop();
 }
+
+
+USANDO O CICLO FOR:
+liga-se todos os leds e vai-se desligando
