@@ -1,0 +1,26 @@
+global:
+VAR sensor_reading_1, sensor_reading_2, sensor_reading_3;
+const tempo_de_pausa = 2000;
+const tempo_de_reg = 5000;
+
+loop{
+    getSensorReaginds();
+        BLALBALBA
+        BLALBALBA
+        BLALBALBA
+        delay(tempo_de_reg)
+}
+
+CORES:
+
+RGB_red(255, 0, 0);
+RGB_blue(0, 0, 255);
+RGB_yellow(255, 255, 0);
+RGB_nule(0, 0, 0);
+
+void setScale()
+{
+  
+  //ciclos for
+	strip.stop();
+}
