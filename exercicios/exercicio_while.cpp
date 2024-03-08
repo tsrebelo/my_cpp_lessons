@@ -6,12 +6,14 @@
 using namespace std;
 
 int main(){
-    
+
+cout << "LOOPFOR:" << endl;
     for(int n=0; n<=10; n++){                                   
         cout << n << endl;
     }
 cout << "_________________________________\n" << endl;
 
+cout << "WHILEDO:" << endl;
     int x;
     while(x<=10){
         cout << x << endl;
