@@ -23,7 +23,7 @@ void showASCIITable(){
 int main(){
 
     system("clear");
-    
+
     int i = 80;
     float f = 3.14;
     char c = 'a';
@@ -31,24 +31,23 @@ int main(){
     //Cast implicito
     float f2 = i;
     char c2 = i;                //o char tem infulência com a tabela de ascii
-    
     cout << "f2: " << f2 << endl;
     cout << "c2: " << c2 << endl;
 
     //Cast explicito
     int i2 = (int)f;
     int i3 = (int)c;
+    cout << "i2: " << i2 << endl;
+    cout << "i3: " << i3 << endl;
 
     //char de um inteiro para um char
     char c3 = (char)i;
-
-    cout << "i2: " << i2 << endl;
-    cout << "i3: " << i3 << endl;
+    cout << "c3: " << c3 << endl;
 
     //cast de string
     int xpto1 = 1;
     int xpto2 = 1;
-    cout << xpto1 + xpto2 << endl;                          //soma 1 + 1
-    cout << to_string(xpto1) + to_string(xpto2) << endl;    //passa de int para string, logo ficando 11
+    cout << "int: " << xpto1 + xpto2 << endl;                          //soma 1 + 1
+    cout << "string: " << to_string(xpto1) + to_string(xpto2) << endl;    //passa de int para string, logo ficando 11
 
 }
