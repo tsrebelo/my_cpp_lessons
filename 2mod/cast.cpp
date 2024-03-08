@@ -39,8 +39,7 @@ int main(){
     int i3 = (int)c;
     cout << "i2: " << i2 << endl;
     cout << "i3: " << i3 << endl;
-
-    //char de um inteiro para um char
+        //char de um inteiro para um char
     char c3 = (char)i;
     cout << "c3: " << c3 << endl;
 
