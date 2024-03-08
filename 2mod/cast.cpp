@@ -10,7 +10,7 @@ const int NUM_CONST = 20;
 void showASCIITable(){
 
     int i = 0;
-    for(int x = 33; x <=127; x++){
+    for(int x = 33; x <=127; x++){                      //mostra de acordo com a tabela de ascii
         cout << (char)x << "\t";
         i++;
         if(i%NUM_CONST == 0 || i >= 94){                //faz uma coluna e "NUM_CONST"
@@ -23,10 +23,7 @@ void showASCIITable(){
 int main(){
 
     system("clear");
-    showASCIITable();
-
-
-/*
+    
     int i = 80;
     float f = 3.14;
     char c = 'a';
@@ -47,7 +44,11 @@ int main(){
 
     cout << "i2: " << i2 << endl;
     cout << "i3: " << i3 << endl;
-    */
 
+    //cast de string
+    int xpto1 = 1;
+    int xpto2 = 1;
+    cout << xpto1 + xpto2 << endl;                          //soma 1 + 1
+    cout << to_string(xpto1) + to_string(xpto2) << endl;    //passa de int para string, logo ficando 11
 
 }
