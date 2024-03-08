@@ -25,7 +25,7 @@ int main(){
     system("clear");
 
     int i = 80;
-    float f = 3.14;
+    float f = 2.9;
     char c = 'a';
 
     //Cast implicito
@@ -47,6 +47,8 @@ int main(){
     int xpto1 = 1;
     int xpto2 = 1;
     cout << "int: " << xpto1 + xpto2 << endl;                          //soma 1 + 1
-    cout << "string: " << to_string(xpto1) + to_string(xpto2) << endl;    //passa de int para string, logo ficando 11
+    cout << "string: " << to_string(xpto1) + to_string(xpto2) << endl;    //faz a concatenação de int para string, logo ficando 11
+    string frase = "Olá este é o meu cast " + to_string(f);      
+    cout << frase << endl;   
 
 }
