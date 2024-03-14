@@ -1,0 +1,46 @@
+#main {
+    width: 100%;
+}
+.row{
+    width: 100%;
+    display: block;
+}
+.col2 {
+    display: inline-block;
+    width: 49%;
+}
+.col2 img {
+    width: 30%;
+}   
+#menu {
+    display: block;
+    width: 100%;
+}
+#menu li {
+    display: block;
+    width: 50%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#menu a {
+    display: block;
+    padding: 5%;
+    margin: 0.8%;
+    background: black;
+    color: rgb(220, 184, 255);
+}
+#menu a:hover {
+    background: rgb(58, 5, 107);
+}
+.col2_2 {
+    display: block;
+}
+.col3 {
+    display:inline-block;
+    width: 32%;
+
+}
+.col3 img {
+    width: 100%;
+}   
