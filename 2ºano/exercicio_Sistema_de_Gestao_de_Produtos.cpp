@@ -31,7 +31,6 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
         system("clear");
         cout << "O produto foi adicionado." << endl;
     }
-
 }
 
 void exibirProdutos(const Produto produtos[], int quantidadeAtual){
@@ -48,8 +47,7 @@ void exibirProdutos(const Produto produtos[], int quantidadeAtual){
             cout << "A quantidade do produto " << n+1 << " é: " << produtos[n].quantidade << endl;                                                                                         
 
         }
-    }
-    
+    }   
 }
 
 float calcularValorTotal(const Produto produtos[], int quantidadeAtual){
@@ -111,7 +109,7 @@ int escolha;
             cout << "Opção inválida! Voltando ao menu..." << endl;
 
         }
-
+        
     } while(escolha != 0);
 }
 
