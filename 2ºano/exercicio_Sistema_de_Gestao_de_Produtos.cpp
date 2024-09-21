@@ -103,7 +103,7 @@ int escolha;
                 break;
 
             case 0:
-                cout << "A sair..." << endl;
+                cout << "A fechar o programa..." << endl;
                 break;
 
             default:
