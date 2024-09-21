@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const int prodMax = 200;
+const int prodMax = 5;
 
 struct Produto{
     string nome;
@@ -12,9 +12,9 @@ struct Produto{
 void addProduto(Produto produtos[], int& quantidadeAtual){
 
     if(quantidadeAtual >= prodMax){
-        cout << "Atingiu o limite máximo de produtos (" << prodMax << "). Não é possível adicionar mais produtos." << endl;
+        cout << "Atingiu o limite máximo de produtos." << "\nNão é possível adicionar mais produtos." << endl;
         return;
-        
+
     } else{
 
         Produto newProduct;
@@ -31,6 +31,7 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
         system("clear");
         cout << "O produto foi adicionado." << endl;
     }
+
 }
 
 void exibirProdutos(const Produto produtos[], int quantidadeAtual){
@@ -41,13 +42,13 @@ void exibirProdutos(const Produto produtos[], int quantidadeAtual){
     } else{
 
         for(int n=0; n<quantidadeAtual; n++){
-            cout << "----------------------------------" << endl;
+            cout << "----------------------------------------" << endl;
             cout << "O nome do produto " << n+1 << " é: " << produtos[n].nome << endl;
             cout << "O preço do produto " << n+1 << " é: " << produtos[n].preco << "€" << endl;
             cout << "A quantidade do produto " << n+1 << " é: " << produtos[n].quantidade << endl;                                                                                         
 
         }
-    }   
+    }
 }
 
 float calcularValorTotal(const Produto produtos[], int quantidadeAtual){
@@ -63,14 +64,14 @@ float calcularValorTotal(const Produto produtos[], int quantidadeAtual){
 
 void showMenu(){
 
-    cout << "----------------------------------" << endl;
-    cout << "               MENU" << endl;
-    cout << "----------------------------------" << endl;
+    cout << "----------------------------------------" << endl;
+    cout << "                  MENU" << endl;
+    cout << "----------------------------------------" << endl;
     cout << "1 - Adicionar Produto " << endl;
     cout << "2 - Exibir Produtos " << endl;
     cout << "3 - Calcular Valor Total do Stock " << endl;
     cout << "0 - Sair " << endl;
-    cout << "----------------------------------" << endl;
+    cout << "----------------------------------------" << endl;
     cout << "Digite a sua opção: ";
    
 }
@@ -109,7 +110,7 @@ int escolha;
             cout << "Opção inválida! Voltando ao menu..." << endl;
 
         }
-        
+
     } while(escolha != 0);
 }
 
