@@ -12,16 +12,20 @@ struct Produto{
 void addProduto(Produto produtos[], int& quantidadeAtual){
 
     if(quantidadeAtual >= prodMax){
+        cout << "----------------------------------------" << endl;
         cout << "Atingiu o limite máximo de produtos." << "\nNão é possível adicionar mais produtos." << endl;
         return;
 
     } else{
 
         Produto newProduct;
+        cout << "----------------------------------------" << endl;
         cout << "Insira o nome do produto: ";
         cin >> newProduct.nome;
+        cout << "----------------------------------------" << endl;
         cout << "Insira o preço do produto: ";
         cin >> newProduct.preco;
+        cout << "----------------------------------------" << endl;
         cout << "Insira a quantidade do produto: ";
         cin >> newProduct.quantidade;
 
@@ -29,6 +33,7 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
         quantidadeAtual++;
 
         system("clear");
+        cout << "----------------------------------------" << endl;
         cout << "O produto foi adicionado." << endl;
     }
 
@@ -37,6 +42,7 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
 void exibirProdutos(const Produto produtos[], int quantidadeAtual){
     
     if(quantidadeAtual == 0){
+        cout << "----------------------------------------" << endl;
         cout << "Sem produtos adicionados." << "\nVoltando ao menu..." << endl;
 
     } else{
@@ -99,16 +105,19 @@ int escolha;
                 break;
 
             case 3:
+                cout << "----------------------------------------" << endl;
                 cout << "O valor total em stock é: " << calcularValorTotal(produtos, quantidadeAtual) << "€" << endl;
                 break;
 
             case 0:
+                cout << "----------------------------------------" << endl;
                 cout << "A sair do programa..." << endl;
+                cout << "----------------------------------------" << endl;
                 break;
 
             default:
-            cout << "Opção inválida! Voltando ao menu..." << endl;
-
+                cout << "----------------------------------------" << endl;
+                cout << "Opção inválida! Voltando ao menu..." << endl;
         }
 
     } while(escolha != 0);
