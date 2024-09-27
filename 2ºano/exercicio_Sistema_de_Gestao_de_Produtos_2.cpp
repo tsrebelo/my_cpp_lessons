@@ -1,7 +1,8 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 
-const int prodMax = 5;
+const int prodMax = 60;
 
 struct Produto{
     string nome;
@@ -12,7 +13,6 @@ struct Produto{
 void addProduto(Produto produtos[], int& quantidadeAtual){
 
     if(quantidadeAtual >= prodMax){
-
         cout << "----------------------------------------" << endl;
         cout << "Atingiu o limite máximo de produtos." << "\nNão é possível adicionar mais produtos." << endl;
         return;
@@ -43,7 +43,6 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
 void exibirProdutos(const Produto produtos[], int quantidadeAtual){
     
     if(quantidadeAtual == 0){
-
         cout << "----------------------------------------" << endl;
         cout << "Sem produtos adicionados." << "\nVoltando ao menu..." << endl;
 

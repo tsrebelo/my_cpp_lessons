@@ -1,12 +1,16 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 
+const string DBfile = "tentativa_1";
 const int prodMax = 5;
 
 struct Produto{
+    int id;
     string nome;
     float preco;
     int quantidade;
+    char status;
 };
 
 void addProduto(Produto produtos[], int& quantidadeAtual){
