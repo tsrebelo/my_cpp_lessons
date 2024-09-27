@@ -1,11 +1,11 @@
 #include <iostream> //Declara objetos que controlam a leitura e a gravação nos fluxos padrão. Essa inclusão é geralmente o único cabeçalho necessário para executar a entrada e a saída de um programa C++
-#include <fstream> //Define várias classes que dão suporte a operações de iostreams em sequências armazenadas em arquivos externos
+#include <fstream> //Define várias classes que dão suporte a operações de iostreams em sequências armazenadas em focheiros externos
 using namespace std; //uasdo para o compilador perceber que sempre que utilizarmos funcoes e objetos da biblioteca padrao em c++ como outputs e inputs e a delcaracao de variaveis do tipo string, nao seja preciso usar ::std
 
-const string DBfile = "tentativa_1"; //é uma constante que armazena o nome de um arquivo, e esse valor não pode ser alterado durante a execução do programa
+const string DBfile = "tentativa_1"; //é uma constante que armazena o nome de um ficheiro, e esse valor não pode ser alterado durante a execução do programa
 const int prodMax = 80; //é uma constante que define a quantidade máxima de produtos que o programa pode gerenciar, nao pode ser alterado tambem
 
-struct Produto{
+struct Produto{ //struct com atributos id, nome, preco, quantidade e status
     int id;
     string nome;
     float preco;
@@ -13,10 +13,12 @@ struct Produto{
     char status;
 };
 
+
+//funcao para carregar produtos no ficheiro
 void loadProd(Produto produtos[], int& quantidadeAtual, const string& tentativa_1){
 
-    ifstream file(DBfile); //cria um objeto ifstream para abrir o arquivo 
-    if (!file) return; //verifica se o arquivo foi aberto com sucesso. Se o arquivo nao existir ou houver erro na abertura volta sem fazer nada
+    ifstream file(DBfile); //cria um objeto ifstream para abrir o ficheiro 
+    if (!file) return; //verifica se o ficheiro foi aberto com sucesso. Se o ficheiro nao existir ou houver erro na abertura volta sem fazer nada
 
     while(file >> produtos[quantidadeAtual].id){
         getline(file, produtos[quantidadeAtual].nome, ','); //vai ler o nome do produto ate achar uma virgula
@@ -24,17 +26,17 @@ void loadProd(Produto produtos[], int& quantidadeAtual, const string& tentativa_
         //vai ler o preco, a quantidade em sotck e o status do protudo
         quantidadeAtual++; //apos ler os dados de um produto, incrementa-se quantidadeAtual para passar para o proximo produto no array
     }
-    file.close(); //fecha o arquivo
+    file.close(); //fecha o ficheiro
 }
 
 void saveProd(const Produto produtos[], int quantidadeAtual, const string& tentativa_1){
 
-    ofstream file(DBfile); //cria um objeto ofstream para abrir o arquivo. Esse objeto abre o arquivo para gravacao. Se ja existir o arquivo ele vai ser sobrescrito
+    ofstream file(DBfile); //cria um objeto ofstream para abrir o focheiro. Esse objeto abre o ficheiro para gravacao. Se ja existir o ficheiro ele vai ser sobrescrito
     for(int x = 0; x < quantidadeAtual; x++){ //ciclo for que percorre o array de produtos desdo indice 0 ate quantidadeAtual, salva todos os produtos existentes no array
         file << produtos[x].id << "," << produtos[x].nome << "," << produtos[x].quantidade << "," //para cada produto no array,a funcao escreve os dados
-        << produtos[x].preco << "," << produtos[x].status << endl; // << serve para gravar dados no arquivo
+        << produtos[x].preco << "," << produtos[x].status << endl; // << serve para gravar dados no ficheiro
     }
-    file.close(); //fecha o arquivo
+    file.close(); //fecha o ficheiro
 }
 
 void addProduto(Produto produtos[], int& quantidadeAtual){
@@ -106,8 +108,9 @@ void showMenu(){
     cout << "1 - Adicionar Produtos " << endl;
     cout << "2 - Exibir Produtos " << endl;
     cout << "3 - Calcular Valor Total do Stock " << endl;
-    cout << "4 - Alterar Produtos " << endl;
-    cout << "5 - Eliminar Produtos " << endl;
+    cout << "4 - Consultar Produtos " << endl;
+    cout << "5 - Alterar Produto " << endl;
+    cout << "6 - Eliminar Produto " << endl;
     cout << "0 - Sair " << endl;
     cout << "----------------------------------------" << endl;
     cout << "Digite a sua opção: ";
