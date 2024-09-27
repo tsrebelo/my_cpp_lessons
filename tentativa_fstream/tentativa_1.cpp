@@ -15,7 +15,7 @@ struct Produto{ //struct com atributos id, nome, preco, quantidade e status
 
 
 //funcao para carregar produtos no ficheiro
-void loadProd(Produto produtos[], int& quantidadeAtual, const string& tentativa_1){
+void loadProd(Produto produtos[], int& quantidadeAtual, const string& filename){
 
     ifstream file(DBfile); //cria um objeto ifstream para abrir o ficheiro 
     if (!file) return; //verifica se o ficheiro foi aberto com sucesso. Se o ficheiro nao existir ou houver erro na abertura volta sem fazer nada
@@ -29,7 +29,8 @@ void loadProd(Produto produtos[], int& quantidadeAtual, const string& tentativa_
     file.close(); //fecha o ficheiro
 }
 
-void saveProd(const Produto produtos[], int quantidadeAtual, const string& tentativa_1){
+//funcao para salvar produtos no ficheiro
+void saveProd(const Produto produtos[], int quantidadeAtual, const string& filename){
 
     ofstream file(DBfile); //cria um objeto ofstream para abrir o focheiro. Esse objeto abre o ficheiro para gravacao. Se ja existir o ficheiro ele vai ser sobrescrito
     for(int x = 0; x < quantidadeAtual; x++){ //ciclo for que percorre o array de produtos desdo indice 0 ate quantidadeAtual, salva todos os produtos existentes no array
