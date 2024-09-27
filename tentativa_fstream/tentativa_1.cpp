@@ -1,6 +1,6 @@
 #include <iostream> //Declara objetos que controlam a leitura e a gravação nos fluxos padrão. Essa inclusão é geralmente o único cabeçalho necessário para executar a entrada e a saída de um programa C++
 #include <fstream> //Define várias classes que dão suporte a operações de iostreams em sequências armazenadas em focheiros externos
-using namespace std; //uasdo para o compilador perceber que sempre que utilizarmos funcoes e objetos da biblioteca padrao em c++ como outputs e inputs e a delcaracao de variaveis do tipo string, nao seja preciso usar ::std
+using namespace std; //usado para o compilador perceber que sempre que utilizarmos funcoes e objetos da biblioteca padrao em c++ como outputs e inputs e a delcaracao de variaveis do tipo string, nao seja preciso usar ::std
 
 const string DBfile = "tentativa_1"; //é uma constante que armazena o nome de um ficheiro, e esse valor não pode ser alterado durante a execução do programa
 const int prodMax = 80; //é uma constante que define a quantidade máxima de produtos que o programa pode gerenciar, nao pode ser alterado tambem
