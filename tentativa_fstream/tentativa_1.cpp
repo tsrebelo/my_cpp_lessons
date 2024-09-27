@@ -40,6 +40,51 @@ void saveProd(const Produto produtos[], int quantidadeAtual, const string& filen
     file.close(); //fecha o ficheiro
 }
 
+//funcao para consultar produtos
+void consultProd(const Produto produtos[], int quantidadeAtual){
+
+    char opcao;
+    cout << "----------------------------------------" << endl;
+    cout << "Quer consultar os produtos ativos(A), deletados(D)?";
+    cin >> opcao;
+
+    if(opcao == 'A'){
+
+        cout << "----------------------------------------" << endl;
+        cout << "Lista de produtos ativos: " << endl; 
+        for(int y = 0; y < quantidadeAtual; y++){
+            if(produtos[y].status == 'A'){ // o if verifica se o status do produto indice y e A, indica que esta ativo
+
+                cout << "----------------------------------------" << endl;
+                cout << "ID: " << produtos[y].id << endl;
+                cout << "Nome: " << produtos[y].nome << endl;
+                cout << "Quantidade: " << produtos[y].quantidade << endl;
+                cout << "Preço: " << produtos[y].preco << "€" << endl;
+                cout << "Status: " << produtos[y].status << endl;
+
+            }
+        }
+    }
+
+    if(opcao == 'D'){
+
+        cout << "----------------------------------------" << endl;
+        cout << "Lista de produtos deletados: " << endl; 
+        for(int y = 0; y < quantidadeAtual; y++){
+            if(produtos[y].status == 'D'){ // o if verifica se o status do produto indice y e A, indica que esta ativo
+
+                cout << "----------------------------------------" << endl;
+                cout << "ID: " << produtos[y].id << endl;
+                cout << "Nome: " << produtos[y].nome << endl;
+                cout << "Quantidade: " << produtos[y].quantidade << endl;
+                cout << "Preço: " << produtos[y].preco << "€" << endl;
+                cout << "Status: " << produtos[y].status << endl;
+
+            }
+        }
+    }
+}
+
 void addProduto(Produto produtos[], int& quantidadeAtual){
 
     if(quantidadeAtual >= prodMax){
@@ -112,6 +157,7 @@ void showMenu(){
     cout << "4 - Consultar Produtos " << endl;
     cout << "5 - Alterar Produto " << endl;
     cout << "6 - Eliminar Produto " << endl;
+    cout << "7 - Salvar Produto " << endl;
     cout << "0 - Sair " << endl;
     cout << "----------------------------------------" << endl;
     cout << "Digite a sua opção: ";

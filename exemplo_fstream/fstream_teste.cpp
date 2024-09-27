@@ -4,7 +4,7 @@
 using namespace std;
 
 
-const string DB_FILENAME = "fstream_teste_lista.txt";
+const string DB_FILENAME = "produto.txt";
 const int prodMax = 80; // Número máximo de produtos
 
 // Estrutura para armazenar informações do produto
@@ -103,16 +103,64 @@ float calcularValorTotal(const Produto produtos[], int quantidadeAtual){
 
 
 // Função para consultar produtos
-void consultarProdutos(const Produto produtos[], int quantidadeAtual) {
+void consultarProdutos(const Produto produtos[], int quantidadeAtual){
+
+    char opcao;
     cout << "----------------------------------------" << endl;
-    cout << "Produtos cadastrados:" << endl;
-    for (int i = 0; i < quantidadeAtual; i++) {
-        if (produtos[i].status == 'A') { // Apenas produtos ativos
-            cout << "ID: " << produtos[i].id << endl;
-            cout << "Nome: " << produtos[i].nome << endl;
-            cout << "Quantidade: " << produtos[i].quantidade << endl;
-            cout << "Preço: " << produtos[i].preco << "€" << endl;
-            cout << "Status: " << produtos[i].status << endl;
+    cout << "Quer consultar os produtos ativos(A), deletados(D) ou todos(T)?";
+    cin >> opcao;
+
+    if(opcao == 'A'){
+
+        cout << "----------------------------------------" << endl;
+        cout << "Lista de produtos ativos: " << endl; 
+        for(int y = 0; y < quantidadeAtual; y++){
+            if(produtos[y].status == 'A'){ // o if verifica se o status do produto indice y e A, indica que esta ativo
+
+                cout << "----------------------------------------" << endl;
+                cout << "ID: " << produtos[y].id << endl;
+                cout << "Nome: " << produtos[y].nome << endl;
+                cout << "Quantidade: " << produtos[y].quantidade << endl;
+                cout << "Preço: " << produtos[y].preco << "€" << endl;
+                cout << "Status: " << produtos[y].status << endl;
+
+            }
+        }
+    }
+
+    if(opcao == 'D'){
+
+        cout << "----------------------------------------" << endl;
+        cout << "Lista de produtos deletados: " << endl; 
+        for(int y = 0; y < quantidadeAtual; y++){
+            if(produtos[y].status == 'D'){ // o if verifica se o status do produto indice y e A, indica que esta ativo
+
+                cout << "----------------------------------------" << endl;
+                cout << "ID: " << produtos[y].id << endl;
+                cout << "Nome: " << produtos[y].nome << endl;
+                cout << "Quantidade: " << produtos[y].quantidade << endl;
+                cout << "Preço: " << produtos[y].preco << "€" << endl;
+                cout << "Status: " << produtos[y].status << endl;
+
+            }
+        }
+    }
+
+    if(opcao == 'T'){
+
+        cout << "----------------------------------------" << endl;
+        cout << "Lista de produtos registados: " << endl; 
+        for(int y = 0; y < quantidadeAtual; y++){
+            if(produtos[y].status == 'A' && produtos[y].status == 'D'){ // o if verifica se o status do produto indice y e A, indica que esta ativo
+
+                cout << "----------------------------------------" << endl;
+                cout << "ID: " << produtos[y].id << endl;
+                cout << "Nome: " << produtos[y].nome << endl;
+                cout << "Quantidade: " << produtos[y].quantidade << endl;
+                cout << "Preço: " << produtos[y].preco << "€" << endl;
+                cout << "Status: " << produtos[y].status << endl;
+
+            }
         }
     }
 }
@@ -175,6 +223,7 @@ void showMenu() {
     cout << "4 - Consultar Produtos " << endl;
     cout << "5 - Alterar Produto " << endl;
     cout << "6 - Eliminar Produto " << endl;
+    cout << "7 - Salvar Produto " << endl;
     cout << "0 - Sair " << endl;
     cout << "----------------------------------------" << endl;
     cout << "Digite a sua opção: ";
@@ -212,6 +261,9 @@ loadProdutos(produtos, quantidadeAtual, "produtos.txt"); // Carrega produtos do 
             break;
         case 6:
             eliminarProduto(produtos, quantidadeAtual); // Elimina um produto
+            break;
+        case 7:
+            saveProdutos(produtos, quantidadeAtual, "listaProdutos.txt");
             break;
         case 0:
             cout << "A sair do programa..." << endl; // Mensagem de saída
