@@ -141,12 +141,11 @@ void changeProd(Produto produtos[], int quantidadeAtual){
             cout << "Produto alterado com sucesso." << endl;
             return;
 
-        } else{
-
-            cout << "-----------------------------------------------" << endl;
-            cout << "Produto nao foi encontrado ou ja foi eliminado." << endl;
-
         }
+
+        cout << "-----------------------------------------------" << endl;
+        cout << "Produto nao foi encontrado ou ja foi eliminado." << endl;
+    
     }
 }
 
@@ -169,16 +168,16 @@ void eliminateProd(Produto produtos[], int quantidadeAtual){
             cout << "Produto eliminado com sucesso!" << endl;
             return;
 
-        } else{
-
-            system("clear");
-            cout << "----------------------------------------" << endl;
-            cout << "Produto nao encontrado." << endl;
-
         }
+
+        system("clear");
+        cout << "----------------------------------------" << endl;
+        cout << "Produto nao encontrado." << endl;
+
     }
 }
 
+//funcao que permite adicionar produtos
 void addProduto(Produto produtos[], int& quantidadeAtual){
 
     if(quantidadeAtual >= prodMax){
@@ -214,8 +213,8 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
         cout << "Insira a quantidade do produto: ";
         cin >> newProduct.quantidade;
 
-        produtos[quantidadeAtual] = newProduct;
-        quantidadeAtual++;
+        produtos[quantidadeAtual] = newProduct; //o novo produto e adicionado no array produtos
+        quantidadeAtual++; //vai incrementar para refletir o novo total de produtos
 
         saveProd(produtos, quantidadeAtual, "lista.txt");
         system("clear");
@@ -225,6 +224,7 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
     }
 }
 
+//funcao que calcula o valor do preco total dos produtos
 float calcularValorTotal(const Produto produtos[], int quantidadeAtual){
 
     float valorTotal = 0.0;
@@ -236,6 +236,7 @@ float calcularValorTotal(const Produto produtos[], int quantidadeAtual){
     return valorTotal;
 }
 
+//funcao que mostra o menu
 void showMenu(){
 
     cout << "----------------------------------------" << endl;
@@ -253,11 +254,13 @@ void showMenu(){
    
 }
 
+//funcao para executar a opcao
 void executaOpcao(){
 
 Produto produtos[prodMax];
 int quantidadeAtual = 0;
 int escolha;
+loadProd(produtos, quantidadeAtual, "produtos.txt"); // carrega os produtos do ficheiro
 
     do{
 
@@ -284,7 +287,7 @@ int escolha;
             eliminateProd(produtos, quantidadeAtual); // Elimina um produto
             break;
         case 6:
-            saveProd(produtos, quantidadeAtual, "listaProdutos.txt");
+            saveProd(produtos, quantidadeAtual, "lista.txt");
             break;
         case 0:
             cout << "A sair do programa..." << endl; // Mensagem de saída
