@@ -57,7 +57,7 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
         cin >> opcao;
         system("clear");
 
-        if(opcao == 'A' || 'a'){
+        if(opcao == 'A'){
 
             cout << "-----------------------------------------------" << endl;
             cout << "           Lista de produtos ativos" << endl; 
@@ -76,7 +76,7 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
             }
         }
 
-        if(opcao == 'E' || 'e'){
+        if(opcao == 'E'){
 
             cout << "-----------------------------------------------" << endl;
             cout << "         Lista de produtos eliminados" << endl; 
@@ -95,7 +95,7 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
             }
         }
 
-        if(opcao == 'T' || 't'){ // se a opcao for T vai mostrar todos os produtos dos A e os D
+        if(opcao == 'T'){ // se a opcao for T vai mostrar todos os produtos dos A e os D
 
             cout << "-----------------------------------------------" << endl;
             cout << "          Lista de todos os produtos" << endl; 
