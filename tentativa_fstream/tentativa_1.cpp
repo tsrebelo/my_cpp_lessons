@@ -37,8 +37,12 @@ void saveProd(const Produto produtos[], int quantidadeAtual, const string& DBfil
     for(int x = 0; x < quantidadeAtual; x++){ //ciclo for que percorre o array de produtos desdo indice 0 ate quantidadeAtual, salva todos os produtos existentes no array
         file << produtos[x].id << "," << produtos[x].nome << "," << produtos[x].quantidade << "," //para cada produto no array,a funcao escreve os dados
         << produtos[x].preco << "," << produtos[x].status << endl; // << serve para gravar dados no ficheiro
+
     }
     file.close(); //fecha o ficheiro
+
+    cout << "-----------------------------------------------" << endl;
+    cout << "Produtos salvos com sucesso!" << endl;
 }
 
 //funcao para consultar os produtos
@@ -164,6 +168,7 @@ void eliminateProd(Produto produtos[], int quantidadeAtual){
             produtos[w].status = 'E'; // define o status como eliminado
             saveProd(produtos, quantidadeAtual, "lista.txt");
 
+            system("clear");
             cout << "-----------------------------------------------" << endl;
             cout << "Produto eliminado com sucesso!" << endl;
             return;
@@ -289,9 +294,12 @@ loadProd(produtos, quantidadeAtual, "produtos.txt"); // carrega os produtos do f
             saveProd(produtos, quantidadeAtual, "lista.txt");
             break;
         case 0: 
+            cout << "-----------------------------------------------" << endl;
             cout << "A sair do programa..." << endl; // Mensagem de saída
+            cout << "-----------------------------------------------" << endl;
             break;
         default:
+            cout << "-----------------------------------------------" << endl;
             cout << "Opção inválida! Voltando ao menu..." << endl; // Mensagem de erro
         }
 
