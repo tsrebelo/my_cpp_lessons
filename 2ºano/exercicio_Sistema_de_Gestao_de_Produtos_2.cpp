@@ -31,6 +31,7 @@ bool fileDB() {
             // Cria um novo ficheiro
             ofstream newFile(DBfile);
             newFile.close();
+            system("clear");
             cout << "-----------------------------------------------" << endl;
             cout << "Ficheiro de base de dados criado com sucesso!" << endl;
             return true; // O ficheiro foi criado
@@ -81,9 +82,9 @@ void saveProd(const Produto produtos[], int quantidadeAtual){
 
     ofstream file(DBfile); //abre o ficheiro em modo modo escrita
     for(int x = 0; x < quantidadeAtual; x++){ //ciclo for que percorre o array de produtos desdo indice 0 ate quantidadeAtual, salva todos os produtos existentes no array
-        file << produtos[x].status << "," << produtos[x].id << ","  //para cada produto no array,a funcao escreve os dados
+        file << produtos[x].id << ","  //para cada produto no array,a funcao escreve os dados
         << produtos[x].nome << "," << produtos[x].preco << "," // << serve para gravar dados no ficheiro
-        << produtos[x].quantidade << endl;
+        << produtos[x].quantidade << "," << produtos[x].status << endl;
     }
     file.close(); //fecha o ficheiro
 
@@ -362,6 +363,5 @@ int main(){
 
     // O ficheiro existe ou foi criado, entra no menu
     executaOpcao();
-
     return 0;
 }
