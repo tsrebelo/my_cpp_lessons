@@ -1,6 +1,5 @@
 #include <iostream> 
 #include <fstream> 
-#include <sstream> 
 using namespace std; 
 
 const string DBfile = "lista"; 
@@ -25,11 +24,11 @@ void loadProd(Produto produtos[], int& quantidadeAtual){
         if (getline(file, line)) {
             stringstream ss(line);
             string status; 
-            getline(ss, status, ','); 
+            getline(ss, status); 
             p.status = status[0]; 
-            ss >> p.id; 
+            ss >> p.id
             ss.ignore(); 
-            getline(ss, p.nome, ','); 
+            getline(ss, p.nome); 
             ss >> p.preco; 
             ss.ignore(); 
             ss >> p.quantidade;
@@ -45,8 +44,8 @@ void saveProd(const Produto produtos[], int quantidadeAtual){
 
     ofstream file(DBfile); 
     for(int x = 0; x < quantidadeAtual; x++){ 
-        file << produtos[x].status << "," << produtos[x].id << ","  
-        << produtos[x].nome << "," << produtos[x].preco << "," 
+        file << produtos[x].status << produtos[x].id  
+        << produtos[x].nome << produtos[x].preco
         << produtos[x].quantidade << endl;
     }
     file.close();
@@ -174,7 +173,7 @@ void eliminateProd(Produto produtos[], int quantidadeAtual){
 
         if(produtos[quantidadeAtual].id == id){
 
-            produtos[w].status = 'E';
+            produtos[w].status = 'E'
             saveProd(produtos, quantidadeAtual);
 
             system("clear");
@@ -290,7 +289,7 @@ loadProd(produtos, quantidadeAtual);
             consultProd(produtos, quantidadeAtual); 
             break;
         case 4:
-            changeProd(produtos, quantidadeAtual);
+            changeProd(produtos, quantidadeAtual)
             break;
         case 5:
             eliminateProd(produtos, quantidadeAtual); 
