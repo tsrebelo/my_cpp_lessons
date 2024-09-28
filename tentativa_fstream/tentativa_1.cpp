@@ -14,6 +14,39 @@ struct Produto{ //struct que define um produto com os atributos id, nome, preco,
     char status;
 };
 
+// Função para verificar e criar o ficheiro de base de dados
+bool fileDB() {
+
+    ifstream file(DBfile);
+    if (!file) {
+        // O ficheiro não existe
+        char opcao;
+        cout << "---------------------------------------------------------" << endl;
+        cout << "O ficheiro de base de dados não foi encontrado." << endl;
+        cout << "---------------------------------------------------------" << endl;
+        cout << "Deseja criar um novo ficheiro de base de dados? (S/N): ";
+        cin >> opcao;
+
+        if (opcao == 'S' || opcao == 's') {
+            // Cria um novo ficheiro
+            ofstream newFile(DBfile);
+            newFile.close();
+            cout << "-----------------------------------------------" << endl;
+            cout << "Ficheiro de base de dados criado com sucesso!" << endl;
+            return true; // O ficheiro foi criado
+        } else {
+            system("clear");
+            // Sai do programa
+            cout << "-----------------------------------------------" << endl;
+            cout << "A sair do programa..." << endl;
+            cout << "-----------------------------------------------" << endl;
+            return false; // O utilizador optou por sair
+        }
+    }
+    return true; // O ficheiro já existia
+}
+
+
 //funcao que carrega os produtos salvos no ficheiro para o array
 void loadProd(Produto produtos[], int& quantidadeAtual){
 
@@ -41,7 +74,6 @@ void loadProd(Produto produtos[], int& quantidadeAtual){
         }
     }
     file.close(); // fecha o arquivo
-
 }
 
 //funcao para salvar o conteudo do array no ficheiro
@@ -75,13 +107,13 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
         cin >> opcao;
         system("clear");
 
-        if(opcao == 'A'){
+        if(opcao == 'A' || opcao == 'a'){
 
             cout << "-----------------------------------------------" << endl;
             cout << "           Lista de produtos ativos" << endl; 
             for(int a = 0; a < quantidadeAtual; a++){
 
-                if(produtos[a].status == 'A' || 'a'){ // o if verifica se o status do produto indice a for A, indica que esta ativo
+                if(produtos[a].status == 'A'){ // o if verifica se o status do produto indice a for A, indica que esta ativo
 
                     cout << "-----------------------------------------------" << endl;
                     cout << "ID: " << produtos[a].id << endl;
@@ -94,7 +126,7 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
             }
         }
 
-        if(opcao == 'E'){
+        if(opcao == 'E' || opcao == 'e'){
 
             cout << "-----------------------------------------------" << endl;
             cout << "         Lista de produtos eliminados" << endl; 
@@ -113,7 +145,7 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
             }
         }
 
-        if(opcao == 'T'){ // se a opcao for T vai mostrar todos os produtos dos A e os D
+        if(opcao == 'T' || opcao == 't'){ // se a opcao for T vai mostrar todos os produtos dos A e os D
 
             cout << "-----------------------------------------------" << endl;
             cout << "          Lista de todos os produtos" << endl; 
@@ -322,6 +354,14 @@ loadProd(produtos, quantidadeAtual); // carrega os produtos do ficheiro
 int main(){
 
     system("clear");
+
+    // Chama a função fileDB para verificar o ficheiro
+    if (!fileDB()) {
+        // Se o ficheiro não foi criado e o utilizador escolheu sair, termina o programa
+        return 0;
+    }
+
+    // O ficheiro existe ou foi criado, entra no menu
     executaOpcao();
 
     return 0;

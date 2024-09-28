@@ -1,3 +1,2 @@
-A,1,t-shirt,12,34
-A,2,shampoo,6,12
-E,3,chourico,8,12
+A,1,t-shirt,12,32
+E,2,chourico,8,25

@@ -1,3 +1,0 @@
-A,1,t-shirt,12,43
-E,2,chourico,10,21
-A,3,camisa,14,31
