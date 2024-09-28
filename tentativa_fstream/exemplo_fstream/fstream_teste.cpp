@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <sstream> // Para manipulação de strings
 using namespace std;
 
 const string DBfile = "lista.txt"; // Nome do arquivo para armazenar os produtos
@@ -19,33 +20,26 @@ void loadProd(Produto produtos[], int& quantidadeAtual) {
     if (!file) return; // Se o arquivo não pode ser aberto, sai da função
 
     quantidadeAtual = 0; // Reseta a contagem de produtos carregados
-    string line;
-
-    while (getline(file, line) && quantidadeAtual < prodMax) {
+    while (file.good() && quantidadeAtual < prodMax) {
         Produto p;
-        size_t pos = 0;
+        string line;
 
-        // Lê o status
-        p.status = line[pos];
-        pos = line.find(',', pos + 1); // Avança para a próxima vírgula
+        // Lê uma linha inteira do arquivo
+        if (getline(file, line)) {
+            stringstream ss(line);
+            string status; // Para capturar o status
+            getline(ss, status, ','); // Lê o status
+            p.status = status[0]; // Define o status
+            ss >> p.id; // Lê o ID
+            ss.ignore(); // Ignora a vírgula
+            getline(ss, p.nome, ','); // Lê o nome até a vírgula
+            ss >> p.preco; // Lê o preço
+            ss.ignore(); // Ignora a vírgula
+            ss >> p.quantidade; // Lê a quantidade
 
-        // Lê o ID
-        p.id = stoi(line.substr(pos + 1, line.find(',', pos + 1) - pos - 1));
-        pos = line.find(',', pos + 1); // Avança para a próxima vírgula
-
-        // Lê o nome
-        size_t nextPos = line.find(',', pos + 1);
-        p.nome = line.substr(pos + 1, nextPos - pos - 1);
-        pos = nextPos;
-
-        // Lê o preço
-        p.preco = stof(line.substr(pos + 1, line.find(',', pos + 1) - pos - 1));
-        pos = line.find(',', pos + 1); // Avança para a próxima vírgula
-
-        // Lê a quantidade
-        p.quantidade = stoi(line.substr(pos + 1));
-
-        produtos[quantidadeAtual++] = p; // Armazena o produto e incrementa a contagem
+            produtos[quantidadeAtual] = p; // Armazena o produto
+            quantidadeAtual++; // Incrementa a quantidade atual
+        }
     }
     file.close(); // Fecha o arquivo
 }
@@ -78,7 +72,7 @@ void consultProd(const Produto produtos[], int quantidadeAtual) {
     cin >> opcao;
     system("clear");
 
-    if (opcao == 'A') {
+    if (opcao == 'A' || 'a') {
         cout << "-----------------------------------------------" << endl;
         cout << "           Lista de produtos ativos" << endl; 
         for (int a = 0; a < quantidadeAtual; a++) {
@@ -91,7 +85,7 @@ void consultProd(const Produto produtos[], int quantidadeAtual) {
                 cout << "Status: " << produtos[a].status << endl;
             }
         }
-    } else if (opcao == 'E') {
+    } else if (opcao == 'E' || 'e') {
         cout << "-----------------------------------------------" << endl;
         cout << "         Lista de produtos eliminados" << endl; 
         for (int e = 0; e < quantidadeAtual; e++) {
@@ -104,7 +98,7 @@ void consultProd(const Produto produtos[], int quantidadeAtual) {
                 cout << "Status: " << produtos[e].status << endl;
             }
         }
-    } else if (opcao == 'T') {
+    } else if (opcao == 'T' || 't') {
         cout << "-----------------------------------------------" << endl;
         cout << "          Lista de todos os produtos" << endl; 
         for (int t = 0; t < quantidadeAtual; t++) {
@@ -180,7 +174,6 @@ void addProduto(Produto produtos[], int& quantidadeAtual) {
         cout << "-----------------------------------------------" << endl;
         cout << "Atingiu o limite máximo de produtos." << "\nNão é possível adicionar mais produtos." << endl;
         return;
-        
     } else {
         Produto newProduct; // Cria um novo produto
         newProduct.status = 'A'; // Define como A o status do novo produto
@@ -243,7 +236,7 @@ void showMenu() {
 void runProgram() {
     Produto produtos[prodMax];
     int quantidadeAtual = 0;
-
+    
     // Carrega produtos do arquivo ao iniciar
     loadProd(produtos, quantidadeAtual);
 

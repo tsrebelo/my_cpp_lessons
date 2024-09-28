@@ -16,29 +16,45 @@ struct Produto{ //struct com atributos id, nome, preco, quantidade e status
 
 
 //funcao para carregar produtos no ficheiro
-void loadProd(Produto produtos[], int& quantidadeAtual, const string& DBfile){
+void loadProd(Produto produtos[], int& quantidadeAtual){
 
-    ifstream file(DBfile); //cria um objeto ifstream para abrir o ficheiro 
-    if (!file) return; //verifica se o ficheiro foi aberto com sucesso. Se o ficheiro nao existir ou houver erro na abertura volta sem fazer nada
+    fstream file(DBfile);
+    if (!file) return; // Se o arquivo não pode ser aberto, sai da função
 
-    while(file >> produtos[quantidadeAtual].id){
-        getline(file, produtos[quantidadeAtual].nome, ','); //vai ler o nome do produto ate achar uma virgula
-        file >> produtos[quantidadeAtual].preco >> produtos[quantidadeAtual].quantidade >> produtos[quantidadeAtual].status;
-        //vai ler o preco, a quantidade em sotck e o status do protudo
-        quantidadeAtual++; //apos ler os dados de um produto, incrementa-se quantidadeAtual para passar para o proximo produto no array
+    quantidadeAtual = 0; // Reseta a contagem de produtos carregados
+    while (file.good() && quantidadeAtual < prodMax) {
+        Produto p;
+        string line;
+
+        // Lê uma linha inteira do arquivo
+        if (getline(file, line)) {
+            stringstream ss(line);
+            string status; // Para capturar o status
+            getline(ss, status, ','); // Lê o status
+            p.status = status[0]; // Define o status
+            ss >> p.id; // Lê o ID
+            ss.ignore(); // Ignora a vírgula
+            getline(ss, p.nome, ','); // Lê o nome até a vírgula
+            ss >> p.preco; // Lê o preço
+            ss.ignore(); // Ignora a vírgula
+            ss >> p.quantidade; // Lê a quantidade
+
+            produtos[quantidadeAtual] = p; // Armazena o produto
+            quantidadeAtual++; // Incrementa a quantidade atual
+        }
     }
-    file.close(); //fecha o ficheiro
+    file.close(); // Fecha o arquivo
 
 }
 
 //funcao para salvar produtos no ficheiro
-void saveProd(const Produto produtos[], int quantidadeAtual, const string& DBfile){
+void saveProd(const Produto produtos[], int quantidadeAtual){
 
     ofstream file(DBfile); //cria um objeto ofstream para abrir o focheiro. Esse objeto abre o ficheiro para gravacao. Se ja existir o ficheiro ele vai ser sobrescrito
     for(int x = 0; x < quantidadeAtual; x++){ //ciclo for que percorre o array de produtos desdo indice 0 ate quantidadeAtual, salva todos os produtos existentes no array
-        file << produtos[x].id << "," << produtos[x].nome << "," << produtos[x].quantidade << "," //para cada produto no array,a funcao escreve os dados
-        << produtos[x].preco << "," << produtos[x].status << endl; // << serve para gravar dados no ficheiro
-
+        file << produtos[x].status << "," << produtos[x].id << ","  //para cada produto no array,a funcao escreve os dados
+        << produtos[x].nome << "," << produtos[x].preco << "," // << serve para gravar dados no ficheiro
+        << produtos[x].quantidade << endl;
     }
     file.close(); //fecha o ficheiro
 
@@ -68,7 +84,7 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
             cout << "           Lista de produtos ativos" << endl; 
             for(int a = 0; a < quantidadeAtual; a++){
 
-                if(produtos[a].status == 'A'){ // o if verifica se o status do produto indice a for A, indica que esta ativo
+                if(produtos[a].status == 'A' || 'a'){ // o if verifica se o status do produto indice a for A, indica que esta ativo
 
                     cout << "-----------------------------------------------" << endl;
                     cout << "ID: " << produtos[a].id << endl;
@@ -141,7 +157,7 @@ void changeProd(Produto produtos[], int quantidadeAtual){
             cout << "Insira a nova quantidade do produto: ";
             cin >> produtos[y].quantidade;
 
-            saveProd(produtos, quantidadeAtual, "lista.txt"); // salva as alterações no ficheiro
+            saveProd(produtos, quantidadeAtual); // salva as alterações no ficheiro
             system("clear");
             cout << "-----------------------------------------------" << endl;
             cout << "Produto alterado com sucesso." << endl;
@@ -167,7 +183,7 @@ void eliminateProd(Produto produtos[], int quantidadeAtual){
         if(produtos[w].id == id){
 
             produtos[w].status = 'E'; // define o status como eliminado
-            saveProd(produtos, quantidadeAtual, "lista.txt");
+            saveProd(produtos, quantidadeAtual);
 
             system("clear");
             cout << "-----------------------------------------------" << endl;
@@ -221,7 +237,7 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
         produtos[quantidadeAtual] = newProduct; //o novo produto e adicionado no array produtos
         quantidadeAtual++; //vai incrementar para refletir o novo total de produtos
 
-        saveProd(produtos, quantidadeAtual, "lista.txt");
+        saveProd(produtos, quantidadeAtual);
         system("clear");
 
         cout << "-----------------------------------------------" << endl;
@@ -230,15 +246,17 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
 }
 
 //funcao que calcula o valor do preco total dos produtos
-float calcularValorTotal(const Produto produtos[], int quantidadeAtual){
+float calcularValorTotal(const Produto produtos[], int quantidadeAtual) {
 
     float total = 0.0;
 
     for (int i = 0; i < quantidadeAtual; i++) {
-        if (produtos[i].status == 'A') { // apenas soma os produtos ativos
+
+        if (produtos[i].status == 'A') { // Apenas soma os produtos ativos
             total += produtos[i].preco * produtos[i].quantidade;
         }
     }
+
     return total;
 }
 
@@ -265,7 +283,7 @@ void executaOpcao(){
 Produto produtos[prodMax];
 int quantidadeAtual = 0;
 int escolha;
-loadProd(produtos, quantidadeAtual, "produtos.txt"); // carrega os produtos do ficheiro
+loadProd(produtos, quantidadeAtual); // carrega os produtos do ficheiro
 
     do{
 
