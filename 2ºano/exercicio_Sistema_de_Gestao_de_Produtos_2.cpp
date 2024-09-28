@@ -47,7 +47,7 @@ void loadProd(Produto produtos[], int& quantidadeAtual){
 //funcao para salvar o conteudo do array no ficheiro
 void saveProd(const Produto produtos[], int quantidadeAtual){
 
-    ofstream file(DBfile); //cria um objeto ofstream para abrir o focheiro. Esse objeto abre o ficheiro para gravacao. Se ja existir o ficheiro ele vai ser sobrescrito
+    ofstream file(DBfile); //abre o ficheiro em modo modo escrita
     for(int x = 0; x < quantidadeAtual; x++){ //ciclo for que percorre o array de produtos desdo indice 0 ate quantidadeAtual, salva todos os produtos existentes no array
         file << produtos[x].status << "," << produtos[x].id << ","  //para cada produto no array,a funcao escreve os dados
         << produtos[x].nome << "," << produtos[x].preco << "," // << serve para gravar dados no ficheiro
