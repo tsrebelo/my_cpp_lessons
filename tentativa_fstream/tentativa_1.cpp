@@ -1,5 +1,6 @@
-#include <iostream> //Declara objetos que controlam a leitura e a gravação nos fluxos padrão. Essa inclusão é geralmente o único cabeçalho necessário para executar a entrada e a saída de um programa C++
-#include <fstream> //Define várias classes que dão suporte a operações de iostreams em sequências armazenadas em focheiros externos
+#include <iostream> //declara objetos que controlam a leitura e a gravação nos fluxos padrão. Essa inclusão é geralmente o único cabeçalho necessário para executar a entrada e a saída de um programa C++
+#include <fstream> //define várias classes que dão suporte a operações de iostreams em sequências armazenadas em focheiros externos
+#include <sstream> //define vários modelos de classe que dão suporte a operações de iostreams em sequências armazenadas em um objeto de matriz alocada. 
 using namespace std; //usado para o compilador perceber que sempre que utilizarmos funcoes e objetos da biblioteca padrao em c++ como outputs e inputs e a delcaracao de variaveis do tipo string, nao seja preciso usar ::std
 
 const string DBfile = "lista.txt"; //é uma constante que armazena o nome de um ficheiro, e esse valor não pode ser alterado durante a execução do programa
@@ -231,13 +232,14 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
 //funcao que calcula o valor do preco total dos produtos
 float calcularValorTotal(const Produto produtos[], int quantidadeAtual){
 
-    float valorTotal = 0.0;
+    float total = 0.0;
 
-    for(int x = 0; x < quantidadeAtual; x++){
-        valorTotal += produtos[x].preco * produtos[x].quantidade;
+    for (int i = 0; i < quantidadeAtual; i++) {
+        if (produtos[i].status == 'A') { // apenas soma os produtos ativos
+            total += produtos[i].preco * produtos[i].quantidade;
+        }
     }
-
-    return valorTotal;
+    return total;
 }
 
 //funcao que mostra o menu
@@ -251,7 +253,6 @@ void showMenu(){
     cout << "3 - Consultar Produtos " << endl;
     cout << "4 - Alterar Produto " << endl;
     cout << "5 - Eliminar Produto " << endl;
-    cout << "6 - Salvar Produto " << endl;
     cout << "0 - Sair " << endl;
     cout << "-----------------------------------------------" << endl;
     cout << "Digite a sua opção: ";
@@ -289,9 +290,6 @@ loadProd(produtos, quantidadeAtual, "produtos.txt"); // carrega os produtos do f
             break;
         case 5:
             eliminateProd(produtos, quantidadeAtual); // Elimina um produto
-            break;
-        case 6:
-            saveProd(produtos, quantidadeAtual, "lista.txt");
             break;
         case 0: 
             cout << "-----------------------------------------------" << endl;
