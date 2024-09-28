@@ -1,12 +1,12 @@
-#include <iostream> //declara objetos que controlam a leitura e a gravação nos fluxos padrão. Essa inclusão é geralmente o único cabeçalho necessário para executar a entrada e a saída de um programa C++
-#include <fstream> //define várias classes que dão suporte a operações de iostreams em sequências armazenadas em focheiros externos
-#include <sstream> //define vários modelos de classe que dão suporte a operações de iostreams em sequências armazenadas em um objeto de matriz alocada. 
-using namespace std; //usado para o compilador perceber que sempre que utilizarmos funcoes e objetos da biblioteca padrao em c++ como outputs e inputs e a delcaracao de variaveis do tipo string, nao seja preciso usar ::std
+#include <iostream> //utilizada para dar entrada e saida de dados(como cin e cout)
+#include <fstream> //trabalha com ficheiros, permitindo a leitura e a gravacao
+#include <sstream> //facilita a manipulacao de strings e conversao entre tipos de dados
+using namespace std; //evita a necessidade de prefixar funções e objetos da biblioteca padrão com std::, como cout, cin, e string.
 
-const string DBfile = "lista.txt"; //é uma constante que armazena o nome de um ficheiro, e esse valor não pode ser alterado durante a execução do programa
-const int prodMax = 80; //é uma constante que define a quantidade máxima de produtos que o programa pode gerenciar, nao pode ser alterado tambem
+const string DBfile = "lista.txt"; //constante global que armazena o nome do arquivo onde os produtos vao ser salvos e carregados
+const int prodMax = 80; //constante global define o numero max de produtos que podem ser armazenados no array
 
-struct Produto{ //struct com atributos id, nome, preco, quantidade e status
+struct Produto{ //struct que define um produto com os atributos id, nome, preco, quantidade e status
     int id;
     string nome;
     float preco;
@@ -14,43 +14,40 @@ struct Produto{ //struct com atributos id, nome, preco, quantidade e status
     char status;
 };
 
-
-//funcao para carregar produtos no ficheiro
+//funcao que carrega os produtos salvos no ficheiro para o array
 void loadProd(Produto produtos[], int& quantidadeAtual){
 
-    fstream file(DBfile);
-    if (!file) return; // Se o arquivo não pode ser aberto, sai da função
+    ifstream file(DBfile); //abre o ficheiro
 
-    quantidadeAtual = 0; // Reseta a contagem de produtos carregados
     while (file.good() && quantidadeAtual < prodMax) {
         Produto p;
         string line;
 
-        // Lê uma linha inteira do arquivo
+        // lê linha inteira por linha inteira do arquivo
         if (getline(file, line)) {
             stringstream ss(line);
-            string status; // Para capturar o status
-            getline(ss, status, ','); // Lê o status
-            p.status = status[0]; // Define o status
-            ss >> p.id; // Lê o ID
-            ss.ignore(); // Ignora a vírgula
-            getline(ss, p.nome, ','); // Lê o nome até a vírgula
-            ss >> p.preco; // Lê o preço
-            ss.ignore(); // Ignora a vírgula
-            ss >> p.quantidade; // Lê a quantidade
+            string status; // para capturar o status
+            getline(ss, status, ','); // lê o status
+            p.status = status[0]; // define o status
+            ss >> p.id; // lê o ID
+            ss.ignore(); // ignora a vírgula
+            getline(ss, p.nome, ','); // lê o nome até a vírgula
+            ss >> p.preco; // lê o preço
+            ss.ignore(); // ignora a vírgula
+            ss >> p.quantidade; // lê a quantidade
 
-            produtos[quantidadeAtual] = p; // Armazena o produto
-            quantidadeAtual++; // Incrementa a quantidade atual
+            produtos[quantidadeAtual] = p; // armazena o produto
+            quantidadeAtual++; // incrementa a quantidade atual
         }
     }
-    file.close(); // Fecha o arquivo
+    file.close(); // fecha o arquivo
 
 }
 
-//funcao para salvar produtos no ficheiro
+//funcao para salvar o conteudo do array no ficheiro
 void saveProd(const Produto produtos[], int quantidadeAtual){
 
-    ofstream file(DBfile); //cria um objeto ofstream para abrir o focheiro. Esse objeto abre o ficheiro para gravacao. Se ja existir o ficheiro ele vai ser sobrescrito
+    ofstream file(DBfile); //abre o ficheiro em modo modo escrita
     for(int x = 0; x < quantidadeAtual; x++){ //ciclo for que percorre o array de produtos desdo indice 0 ate quantidadeAtual, salva todos os produtos existentes no array
         file << produtos[x].status << "," << produtos[x].id << ","  //para cada produto no array,a funcao escreve os dados
         << produtos[x].nome << "," << produtos[x].preco << "," // << serve para gravar dados no ficheiro

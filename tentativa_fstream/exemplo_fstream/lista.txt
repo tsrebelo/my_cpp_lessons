@@ -1,4 +1,0 @@
-E,1,t-shirt,12,34
-A,2,camisa,10,56
-A,3,blusa,23,43
-E,4,blusa,12,34
