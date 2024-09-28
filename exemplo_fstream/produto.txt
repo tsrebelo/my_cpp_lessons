@@ -1,2 +1,2 @@
-1,t-shirt,12,43,D
-2,camisa,12,454,A
+1,t-shirt,12,34,D
+2,camisa,10,45,A

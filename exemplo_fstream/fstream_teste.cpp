@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <sstream>
 using namespace std;
 
 
@@ -72,24 +71,6 @@ void addProduto(Produto produtos[], int& quantidadeAtual) {
     cout << "Produto adicionado com sucesso." << endl;
 }
 
-void exibirProdutos(const Produto produtos[], int quantidadeAtual){
-    
-    if(quantidadeAtual == 0){
-        cout << "----------------------------------------" << endl;
-        cout << "Sem produtos adicionados." << "\nVoltando ao menu..." << endl;
-
-    } else{
-
-        for(int n=0; n<quantidadeAtual; n++){
-            cout << "----------------------------------------" << endl;
-            cout << "O nome do produto " << n+1 << " é: " << produtos[n].nome << endl;
-            cout << "O preço do produto " << n+1 << " é: " << produtos[n].preco << "€" << endl;
-            cout << "A quantidade do produto " << n+1 << " é: " << produtos[n].quantidade << endl;                                                                                         
-
-        }
-    }
-}
-
 float calcularValorTotal(const Produto produtos[], int quantidadeAtual){
 
     float valorTotal = 0.0;
@@ -106,59 +87,67 @@ float calcularValorTotal(const Produto produtos[], int quantidadeAtual){
 void consultarProdutos(const Produto produtos[], int quantidadeAtual){
 
     char opcao;
-    cout << "----------------------------------------" << endl;
-    cout << "Quer consultar os produtos ativos(A), deletados(D) ou todos(T)?";
-    cin >> opcao;
-
-    if(opcao == 'A'){
-
+    if(quantidadeAtual == 0){
         cout << "----------------------------------------" << endl;
-        cout << "Lista de produtos ativos: " << endl; 
-        for(int y = 0; y < quantidadeAtual; y++){
-            if(produtos[y].status == 'A'){ // o if verifica se o status do produto indice y e A, indica que esta ativo
+        cout << "Sem produtos adicionados." << "\nVoltando ao menu..." << endl;
+        return;
 
-                cout << "----------------------------------------" << endl;
-                cout << "ID: " << produtos[y].id << endl;
-                cout << "Nome: " << produtos[y].nome << endl;
-                cout << "Quantidade: " << produtos[y].quantidade << endl;
-                cout << "Preço: " << produtos[y].preco << "€" << endl;
-                cout << "Status: " << produtos[y].status << endl;
+    } else{
 
+        cout << "------------------------------------------------------------------" << endl;
+        cout << "Quer consultar os produtos ativos(A), deletados(D) ou todos(T)? ";
+        cin >> opcao;
+        system("clear");
+
+        if(opcao == 'A'){
+
+            cout << "-----------------------------------------" << endl;
+            cout << "       Lista de produtos ativos" << endl; 
+            for(int a = 0; a < quantidadeAtual; a++){
+
+                if(produtos[a].status == 'A'){ // o if verifica se o status do produto indice a for A, indica que esta ativo
+
+                    cout << "-----------------------------------------" << endl;
+                    cout << "ID: " << produtos[a].id << endl;
+                    cout << "Nome: " << produtos[a].nome << endl;
+                    cout << "Preço: " << produtos[a].preco << "€" << endl;
+                    cout << "Quantidade: " << produtos[a].quantidade << endl;
+                    cout << "Status: " << produtos[a].status << endl;
+
+                }
             }
         }
-    }
 
-    if(opcao == 'D'){
+        if(opcao == 'D'){
 
-        cout << "----------------------------------------" << endl;
-        cout << "Lista de produtos deletados: " << endl; 
-        for(int y = 0; y < quantidadeAtual; y++){
-            if(produtos[y].status == 'D'){ // o if verifica se o status do produto indice y e A, indica que esta ativo
+            cout << "----------------------------------------" << endl;
+            cout << "      Lista de produtos deletados" << endl; 
+            for(int d = 0; d < quantidadeAtual; d++){
 
-                cout << "----------------------------------------" << endl;
-                cout << "ID: " << produtos[y].id << endl;
-                cout << "Nome: " << produtos[y].nome << endl;
-                cout << "Quantidade: " << produtos[y].quantidade << endl;
-                cout << "Preço: " << produtos[y].preco << "€" << endl;
-                cout << "Status: " << produtos[y].status << endl;
+                if(produtos[d].status == 'D'){ // o if verifica se o status do produto indice d for D, indica que esta deletado
 
+                    cout << "----------------------------------------" << endl;
+                    cout << "ID: " << produtos[d].id << endl;
+                    cout << "Nome: " << produtos[d].nome << endl;
+                    cout << "Preço: " << produtos[d].preco << "€" << endl;
+                    cout << "Quantidade: " << produtos[d].quantidade << endl;
+                    cout << "Status: " << produtos[d].status << endl;
+
+                }
             }
         }
-    }
 
-    if(opcao == 'T'){
+        if(opcao == 'T'){
 
-        cout << "----------------------------------------" << endl;
-        cout << "Lista de produtos registados: " << endl; 
-        for(int y = 0; y < quantidadeAtual; y++){
-            if(produtos[y].status == 'A' && produtos[y].status == 'D'){ // o if verifica se o status do produto indice y e A, indica que esta ativo
-
-                cout << "----------------------------------------" << endl;
-                cout << "ID: " << produtos[y].id << endl;
-                cout << "Nome: " << produtos[y].nome << endl;
-                cout << "Quantidade: " << produtos[y].quantidade << endl;
-                cout << "Preço: " << produtos[y].preco << "€" << endl;
-                cout << "Status: " << produtos[y].status << endl;
+            cout << "---------------------------------------" << endl;
+            cout << "      Lista de todos os produtos" << endl; 
+            for(int t=0; t<quantidadeAtual; t++){
+                cout << "---------------------------------------" << endl;
+                cout << "ID: " << produtos[t].id << endl;
+                cout << "Nome: " << produtos[t].nome << endl;
+                cout << "Preço: " << produtos[t].preco << "€" << endl;
+                cout << "Quantidade: " << produtos[t].quantidade << endl;
+                cout << "Status: " << produtos[t].status << endl;                                                                                         
 
             }
         }
@@ -171,6 +160,7 @@ void alterarProduto(Produto produtos[], int quantidadeAtual) {
     cout << "----------------------------------------" << endl;
     cout << "Insira o ID do produto a alterar: ";
     cin >> id;
+    system("clear");
 
     for (int i = 0; i < quantidadeAtual; i++) {
         if (produtos[i].id == id && produtos[i].status == 'A') {
@@ -218,12 +208,11 @@ void showMenu() {
     cout << "                  MENU" << endl;
     cout << "----------------------------------------" << endl;
     cout << "1 - Adicionar Produto " << endl;
-    cout << "2 - Exibir Produtos " << endl;
-    cout << "3 - Calcular Valor Total do Stock " << endl;
-    cout << "4 - Consultar Produtos " << endl;
-    cout << "5 - Alterar Produto " << endl;
-    cout << "6 - Eliminar Produto " << endl;
-    cout << "7 - Salvar Produto " << endl;
+    cout << "2 - Calcular Valor Total do Stock " << endl;
+    cout << "3 - Consultar Produtos " << endl;
+    cout << "4 - Alterar Produto " << endl;
+    cout << "5 - Eliminar Produto " << endl;
+    cout << "6 - Salvar Produto " << endl;
     cout << "0 - Sair " << endl;
     cout << "----------------------------------------" << endl;
     cout << "Digite a sua opção: ";
@@ -247,22 +236,19 @@ loadProdutos(produtos, quantidadeAtual, "produtos.txt"); // Carrega produtos do 
             addProduto(produtos, quantidadeAtual); // Adiciona um produto
             break;
         case 2:
-            exibirProdutos(produtos, quantidadeAtual);
-            break;
-        case 3:
             cout << "----------------------------------------" << endl;
             cout << "O valor total em stock é: " << calcularValorTotal(produtos, quantidadeAtual) << "€" << endl;
             break;
-        case 4:
+        case 3:
             consultarProdutos(produtos, quantidadeAtual); // Consulta produtos
             break;
-        case 5:
+        case 4:
             alterarProduto(produtos, quantidadeAtual); // Altera um produto
             break;
-        case 6:
+        case 5:
             eliminarProduto(produtos, quantidadeAtual); // Elimina um produto
             break;
-        case 7:
+        case 6:
             saveProdutos(produtos, quantidadeAtual, "listaProdutos.txt");
             break;
         case 0:

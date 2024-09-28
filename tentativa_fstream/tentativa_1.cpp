@@ -44,45 +44,91 @@ void saveProd(const Produto produtos[], int quantidadeAtual, const string& filen
 void consultProd(const Produto produtos[], int quantidadeAtual){
 
     char opcao;
+    if(quantidadeAtual == 0){
+        cout << "----------------------------------------" << endl;
+        cout << "Sem produtos adicionados." << "\nVoltando ao menu..." << endl;
+        return;
+
+    } else{
+
+        cout << "------------------------------------------------------------------" << endl;
+        cout << "Quer consultar os produtos ativos(A), deletados(D) ou todos(T)? ";
+        cin >> opcao;
+        system("clear");
+
+        if(opcao == 'A'){
+
+            cout << "-----------------------------------------" << endl;
+            cout << "       Lista de produtos ativos" << endl; 
+            for(int a = 0; a < quantidadeAtual; a++){
+
+                if(produtos[a].status == 'A'){ // o if verifica se o status do produto indice a for A, indica que esta ativo
+
+                    cout << "-----------------------------------------" << endl;
+                    cout << "ID: " << produtos[a].id << endl;
+                    cout << "Nome: " << produtos[a].nome << endl;
+                    cout << "Preço: " << produtos[a].preco << "€" << endl;
+                    cout << "Quantidade: " << produtos[a].quantidade << endl;
+                    cout << "Status: " << produtos[a].status << endl;
+
+                }
+            }
+        }
+
+        if(opcao == 'D'){
+
+            cout << "----------------------------------------" << endl;
+            cout << "      Lista de produtos deletados" << endl; 
+            for(int d = 0; d < quantidadeAtual; d++){
+
+                if(produtos[d].status == 'D'){ // o if verifica se o status do produto indice d for D, indica que esta deletado
+
+                    cout << "----------------------------------------" << endl;
+                    cout << "ID: " << produtos[d].id << endl;
+                    cout << "Nome: " << produtos[d].nome << endl;
+                    cout << "Preço: " << produtos[d].preco << "€" << endl;
+                    cout << "Quantidade: " << produtos[d].quantidade << endl;
+                    cout << "Status: " << produtos[d].status << endl;
+
+                }
+            }
+        }
+
+        if(opcao == 'T'){ // se a opcao for T vai mostrar todos os produtos dos A e os D
+
+            cout << "---------------------------------------" << endl;
+            cout << "      Lista de todos os produtos" << endl; 
+            for(int t=0; t<quantidadeAtual; t++){
+                cout << "---------------------------------------" << endl;
+                cout << "ID: " << produtos[t].id << endl;
+                cout << "Nome: " << produtos[t].nome << endl;
+                cout << "Preço: " << produtos[t].preco << "€" << endl;
+                cout << "Quantidade: " << produtos[t].quantidade << endl;
+                cout << "Status: " << produtos[t].status << endl;                                                                                         
+
+            }
+        }
+    }
+}
+
+void changeProd(Produto produtos[], int quantidadeAtual){
+
+    int id; //declaracao de uma variavel inteira id
     cout << "----------------------------------------" << endl;
-    cout << "Quer consultar os produtos ativos(A), deletados(D)?";
-    cin >> opcao;
+    cout << "Insira o ID do produto que deseja alterar: "; 
+    cin >> id; //solicita ao usuario que insira o id para alterar e o valor vai ser armazenado na variavel id
+    system("clear");
 
-    if(opcao == 'A'){
+    for(int y = 0; y < quantidadeAtual; y++){ //vai percorrer todos os produtos do array, procurando um produto com id igual ao valor de id inserido
 
-        cout << "----------------------------------------" << endl;
-        cout << "Lista de produtos ativos: " << endl; 
-        for(int y = 0; y < quantidadeAtual; y++){
-            if(produtos[y].status == 'A'){ // o if verifica se o status do produto indice y e A, indica que esta ativo
+        if(produtos[y].id == id && produtos[y].status == 'A'){ //verifica o id o que garante que tenha status A. Impedindo que produtos D sejam alterados
 
-                cout << "----------------------------------------" << endl;
-                cout << "ID: " << produtos[y].id << endl;
-                cout << "Nome: " << produtos[y].nome << endl;
-                cout << "Quantidade: " << produtos[y].quantidade << endl;
-                cout << "Preço: " << produtos[y].preco << "€" << endl;
-                cout << "Status: " << produtos[y].status << endl;
+            cout << "----------------------------------------" << endl;
+            
 
-            }
         }
     }
 
-    if(opcao == 'D'){
-
-        cout << "----------------------------------------" << endl;
-        cout << "Lista de produtos deletados: " << endl; 
-        for(int y = 0; y < quantidadeAtual; y++){
-            if(produtos[y].status == 'D'){ // o if verifica se o status do produto indice y e A, indica que esta ativo
-
-                cout << "----------------------------------------" << endl;
-                cout << "ID: " << produtos[y].id << endl;
-                cout << "Nome: " << produtos[y].nome << endl;
-                cout << "Quantidade: " << produtos[y].quantidade << endl;
-                cout << "Preço: " << produtos[y].preco << "€" << endl;
-                cout << "Status: " << produtos[y].status << endl;
-
-            }
-        }
-    }
 }
 
 void addProduto(Produto produtos[], int& quantidadeAtual){
