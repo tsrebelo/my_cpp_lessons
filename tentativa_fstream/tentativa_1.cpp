@@ -27,6 +27,7 @@ void loadProd(Produto produtos[], int& quantidadeAtual, const string& DBfile){
         quantidadeAtual++; //apos ler os dados de um produto, incrementa-se quantidadeAtual para passar para o proximo produto no array
     }
     file.close(); //fecha o ficheiro
+
 }
 
 //funcao para salvar produtos no ficheiro
@@ -45,7 +46,7 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
 
     char opcao;
     if(quantidadeAtual == 0){
-        cout << "----------------------------------------" << endl;
+        cout << "-----------------------------------------------" << endl;
         cout << "Sem produtos adicionados." << "\nVoltando ao menu..." << endl;
         return;
 
@@ -56,15 +57,15 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
         cin >> opcao;
         system("clear");
 
-        if(opcao == 'A'){
+        if(opcao == 'A' || 'a'){
 
-            cout << "-----------------------------------------" << endl;
-            cout << "       Lista de produtos ativos" << endl; 
+            cout << "-----------------------------------------------" << endl;
+            cout << "           Lista de produtos ativos" << endl; 
             for(int a = 0; a < quantidadeAtual; a++){
 
                 if(produtos[a].status == 'A'){ // o if verifica se o status do produto indice a for A, indica que esta ativo
 
-                    cout << "-----------------------------------------" << endl;
+                    cout << "-----------------------------------------------" << endl;
                     cout << "ID: " << produtos[a].id << endl;
                     cout << "Nome: " << produtos[a].nome << endl;
                     cout << "Preço: " << produtos[a].preco << "€" << endl;
@@ -75,15 +76,15 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
             }
         }
 
-        if(opcao == 'E'){
+        if(opcao == 'E' || 'e'){
 
-            cout << "----------------------------------------" << endl;
-            cout << "      Lista de produtos eliminados" << endl; 
+            cout << "-----------------------------------------------" << endl;
+            cout << "         Lista de produtos eliminados" << endl; 
             for(int e = 0; e < quantidadeAtual; e++){
 
                 if(produtos[e].status == 'E'){ // o if verifica se o status do produto indice e for E, indica que esta eliminado
 
-                    cout << "----------------------------------------" << endl;
+                    cout << "-----------------------------------------------" << endl;
                     cout << "ID: " << produtos[e].id << endl;
                     cout << "Nome: " << produtos[e].nome << endl;
                     cout << "Preço: " << produtos[e].preco << "€" << endl;
@@ -94,12 +95,12 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
             }
         }
 
-        if(opcao == 'T'){ // se a opcao for T vai mostrar todos os produtos dos A e os D
+        if(opcao == 'T' || 't'){ // se a opcao for T vai mostrar todos os produtos dos A e os D
 
-            cout << "---------------------------------------" << endl;
-            cout << "      Lista de todos os produtos" << endl; 
+            cout << "-----------------------------------------------" << endl;
+            cout << "          Lista de todos os produtos" << endl; 
             for(int t=0; t<quantidadeAtual; t++){
-                cout << "---------------------------------------" << endl;
+                cout << "-----------------------------------------------" << endl;
                 cout << "ID: " << produtos[t].id << endl;
                 cout << "Nome: " << produtos[t].nome << endl;
                 cout << "Preço: " << produtos[t].preco << "€" << endl;
@@ -115,7 +116,7 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
 void changeProd(Produto produtos[], int quantidadeAtual){
 
     int id; //declaracao de uma variavel inteira id
-    cout << "----------------------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
     cout << "Insira o ID do produto que deseja alterar: "; 
     cin >> id; //solicita ao usuario que insira o id para alterar e o valor vai ser armazenado na variavel id
     system("clear");
@@ -124,36 +125,35 @@ void changeProd(Produto produtos[], int quantidadeAtual){
 
         if(produtos[y].id == id && produtos[y].status == 'A'){ //verifica o id o que garante que tenha status A. Impedindo que produtos D sejam alterados
 
-            cout << "----------------------------------------" << endl;
+            cout << "-----------------------------------------------" << endl;
             cout << "Insira o novo nome do produto: ";
             cin.ignore(); // limpa o buffer de entrada para evitar que os restos de entradas anteriores interfiram no uso do getline
             getline(cin, produtos[y].nome); //permite ler o nome completo do produto, incluindo espacos
-            cout << "----------------------------------------" << endl;
+            cout << "-----------------------------------------------" << endl;
             cout << "Insira o novo preço do produto: ";
             cin >> produtos[y].preco;
-            cout << "----------------------------------------" << endl;
+            cout << "-----------------------------------------------" << endl;
             cout << "Insira a nova quantidade do produto: ";
             cin >> produtos[y].quantidade;
 
             saveProd(produtos, quantidadeAtual, "lista.txt"); // salva as alterações no ficheiro
             system("clear");
-            cout << "----------------------------------------" << endl;
+            cout << "-----------------------------------------------" << endl;
             cout << "Produto alterado com sucesso." << endl;
             return;
 
         }
-
-        cout << "-----------------------------------------------" << endl;
-        cout << "Produto nao foi encontrado ou ja foi eliminado." << endl;
-    
     }
+
+    cout << "-----------------------------------------------" << endl;
+    cout << "Produto nao foi encontrado ou ja foi eliminado." << endl;
 }
 
 //funcao para eliminar produtos
 void eliminateProd(Produto produtos[], int quantidadeAtual){
 
     int id;
-    cout << "----------------------------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
     cout << "Insira o ID do produto que deseja eliminar: ";
     cin >> id;
 
@@ -164,17 +164,16 @@ void eliminateProd(Produto produtos[], int quantidadeAtual){
             produtos[w].status = 'E'; // define o status como eliminado
             saveProd(produtos, quantidadeAtual, "lista.txt");
 
-            cout << "----------------------------------------" << endl;
+            cout << "-----------------------------------------------" << endl;
             cout << "Produto eliminado com sucesso!" << endl;
             return;
 
         }
-
-        system("clear");
-        cout << "----------------------------------------" << endl;
-        cout << "Produto nao encontrado." << endl;
-
     }
+
+    system("clear");
+    cout << "-----------------------------------------------" << endl;
+    cout << "Produto nao encontrado." << endl;
 }
 
 //funcao que permite adicionar produtos
@@ -182,7 +181,7 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
 
     if(quantidadeAtual >= prodMax){
 
-        cout << "----------------------------------------" << endl;
+        cout << "-----------------------------------------------" << endl;
         cout << "Atingiu o limite máximo de produtos." << "\nNão é possível adicionar mais produtos." << endl;
         return;
 
@@ -200,16 +199,16 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
             // +1 incrementa o id e garante que o novo produto tenha um id unico e sequencial
         }       
 
-        cout << "----------------------------------------" << endl;
+        cout << "-----------------------------------------------" << endl;
         cout << "Insira o nome do produto: ";
         cin.ignore();
         getline(cin, newProduct.nome);
 
-        cout << "----------------------------------------" << endl;
+        cout << "-----------------------------------------------" << endl;
         cout << "Insira o preço do produto: ";
         cin >> newProduct.preco;
 
-        cout << "----------------------------------------" << endl;
+        cout << "-----------------------------------------------" << endl;
         cout << "Insira a quantidade do produto: ";
         cin >> newProduct.quantidade;
 
@@ -219,7 +218,7 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
         saveProd(produtos, quantidadeAtual, "lista.txt");
         system("clear");
 
-        cout << "----------------------------------------" << endl;
+        cout << "-----------------------------------------------" << endl;
         cout << "O produto foi adicionado." << endl;
     }
 }
@@ -239,9 +238,9 @@ float calcularValorTotal(const Produto produtos[], int quantidadeAtual){
 //funcao que mostra o menu
 void showMenu(){
 
-    cout << "----------------------------------------" << endl;
-    cout << "                  MENU" << endl;
-    cout << "----------------------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
+    cout << "                     MENU" << endl;
+    cout << "-----------------------------------------------" << endl;
     cout << "1 - Adicionar Produtos " << endl;
     cout << "2 - Calcular Valor Total do Stock " << endl;
     cout << "3 - Consultar Produtos " << endl;
@@ -249,7 +248,7 @@ void showMenu(){
     cout << "5 - Eliminar Produto " << endl;
     cout << "6 - Salvar Produto " << endl;
     cout << "0 - Sair " << endl;
-    cout << "----------------------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
     cout << "Digite a sua opção: ";
    
 }
@@ -274,7 +273,7 @@ loadProd(produtos, quantidadeAtual, "produtos.txt"); // carrega os produtos do f
             addProduto(produtos, quantidadeAtual); // Adiciona um produto
             break;
         case 2:
-            cout << "----------------------------------------" << endl;
+            cout << "-----------------------------------------------" << endl;
             cout << "O valor total em stock é: " << calcularValorTotal(produtos, quantidadeAtual) << "€" << endl;
             break;
         case 3:
@@ -289,7 +288,7 @@ loadProd(produtos, quantidadeAtual, "produtos.txt"); // carrega os produtos do f
         case 6:
             saveProd(produtos, quantidadeAtual, "lista.txt");
             break;
-        case 0:
+        case 0: 
             cout << "A sair do programa..." << endl; // Mensagem de saída
             break;
         default:
