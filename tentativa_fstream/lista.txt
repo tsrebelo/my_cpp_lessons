@@ -1,2 +1,0 @@
-A,1,t-shirt,12,32
-E,2,chourico,8,25
