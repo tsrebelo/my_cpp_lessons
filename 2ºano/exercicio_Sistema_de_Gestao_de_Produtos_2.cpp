@@ -200,7 +200,7 @@ void changeProd(Produto produtos[], int quantidadeAtual){
 }
 
 //funcao para eliminar produtos
-void eliminateProd(Produto produtos[], int quantidadeAtual){
+void eraseProd(Produto produtos[], int quantidadeAtual){
 
     int id;
     cout << "-----------------------------------------------" << endl;
@@ -336,7 +336,7 @@ loadProd(produtos, quantidadeAtual); // carrega os produtos do ficheiro
             changeProd(produtos, quantidadeAtual); // Altera um produto
             break;
         case 5:
-            eliminateProd(produtos, quantidadeAtual); // Elimina um produto
+            eraseProd(produtos, quantidadeAtual); // Elimina um produto
             break;
         case 0: 
             cout << "-----------------------------------------------" << endl;
