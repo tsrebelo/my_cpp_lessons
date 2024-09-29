@@ -1,12 +1,12 @@
-#include <iostream> //declara objetos que controlam a leitura e a gravação nos fluxos padrão. Essa inclusão é geralmente o único cabeçalho necessário para executar a entrada e a saída de um programa C++
-#include <fstream> //define várias classes que dão suporte a operações de iostreams em sequências armazenadas em focheiros externos
-#include <sstream> //define vários modelos de classe que dão suporte a operações de iostreams em sequências armazenadas em um objeto de matriz alocada. 
-using namespace std; //usado para o compilador perceber que sempre que utilizarmos funcoes e objetos da biblioteca padrao em c++ como outputs e inputs e a delcaracao de variaveis do tipo string, nao seja preciso usar ::std
+#include <iostream> //importa a biblioteca para manipulacao de entrada e saida no terminal, como cin e cout(inputs e outputs)
+#include <fstream> //permite a manipulacao de ficheiros externos(como a leitura e escrita no ficheiro)
+#include <sstream> //para manipulacao de fluxos de strings, convertendo string em dados estruturados(util para ler ficheiros)
+using namespace std; //evita a necessidade de prefixar objetos da biblioteca padrao com std:: como cout, cin e strings
 
-const string DBfile = "lista.txt"; //é uma constante que armazena o nome de um ficheiro, e esse valor não pode ser alterado durante a execução do programa
-const int prodMax = 80; //é uma constante que define a quantidade máxima de produtos que o programa pode gerenciar, nao pode ser alterado tambem
+const string DBfile = "lista.txt"; //define o nome do arquivo onde os produtos serao armazenados
+const int prodMax = 80; //limita o numero max de produtos que o programa pode ter
 
-struct Produto{ //struct com atributos id, nome, preco, quantidade e status
+struct Produto{ //define uma estrutura com atributos id, nome, preco, quantidade e status
     int id;
     string nome;
     float preco;
@@ -14,11 +14,12 @@ struct Produto{ //struct com atributos id, nome, preco, quantidade e status
     char status;
 };
 
-// Função para verificar e criar o ficheiro de base de dados
+//função para verificar e criar o ficheiro de base de dados
 bool fileDB() {
-    ifstream file(DBfile);
+
+    ifstream file(DBfile); // abre o ficheiro
     if (!file) {
-        // O ficheiro não existe
+        //se o ficheir
         char opcao;
         cout << "---------------------------------------------------------" << endl;
         cout << "O ficheiro de base de dados não foi encontrado." << endl;
