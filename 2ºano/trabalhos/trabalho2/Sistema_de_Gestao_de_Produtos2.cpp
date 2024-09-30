@@ -50,7 +50,7 @@ bool fileDB() {
 //funcao para carregar produtos no ficheiro
 void loadProd(Produto produtos[], int& quantidadeAtual){
 
-    fstream file(DBfile);
+    ifstream file(DBfile);
     if (!file) return; 
 
     quantidadeAtual = 0;
@@ -178,10 +178,6 @@ void changeProd(Produto produtos[], int quantidadeAtual){
 
         if(produtos[y].id == id && produtos[y].status == 'A'){ 
 
-            cout << "-----------------------------------------------" << endl;
-            cout << "Insira o novo nome do produto: ";
-            cin.ignore(); 
-            getline(cin, produtos[y].nome); 
             cout << "-----------------------------------------------" << endl;
             cout << "Insira o novo preço do produto: ";
             cin >> produtos[y].preco;

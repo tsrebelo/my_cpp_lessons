@@ -50,7 +50,7 @@ bool fileDB() {
 //funcao para carregar produtos no ficheiro
 void loadProd(Produto produtos[], int& quantidadeAtual){
 
-    fstream file(DBfile);
+    ifstream file(DBfile);
     if (!file) return; // Se o arquivo não pode ser aberto, sai da função
 
     quantidadeAtual = 0; // Reseta a contagem de produtos carregados
