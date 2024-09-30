@@ -17,9 +17,9 @@ struct Produto{
 //função para verificar e criar o ficheiro de base de dados
 bool fileDB() {
 
-    ifstream file(DBfile); // abre o ficheiro
+    ifstream file(DBfile);
     if (!file) {
-        //se o ficheir
+     
         char opcao;
         cout << "---------------------------------------------------------" << endl;
         cout << "O ficheiro de base de dados não foi encontrado." << endl;
