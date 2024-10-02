@@ -19,7 +19,6 @@ bool fileDB() {
 
     ifstream file(DBfile); // abre o ficheiro
     if (!file) {
-        //se o ficheir
         char opcao;
         cout << "---------------------------------------------------------" << endl;
         cout << "O ficheiro de base de dados não foi encontrado." << endl;
@@ -41,7 +40,7 @@ bool fileDB() {
             cout << "-----------------------------------------------" << endl;
             cout << "A sair do programa..." << endl;
             cout << "-----------------------------------------------" << endl;
-            return false; // Termina o programa
+            return 0; // Termina o programa
         }
     }
     return true; // O arquivo já existe
