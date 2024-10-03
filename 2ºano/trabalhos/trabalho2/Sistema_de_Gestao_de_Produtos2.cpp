@@ -65,41 +65,42 @@ void loadProd(Produto produtos[], int& quantidadeAtual){
 
     quantidadeAtual = 0; 
 
+    //enquanto houver dados no ficheiro e a quantidade atual for menor que prodMax
     while (file.good() && quantidadeAtual < prodMax) {
 
         Produto p;
         string line;
 
-        if (getline(file, line)) {
+        if (getline(file, line)) { //le uma linha do ficheiro
 
-            stringstream ss(line);
-
+            stringstream ss(line); //converte a linha para um fluxo de string
             string status; 
-            getline(ss, status, ','); 
-            p.status = status[0];
 
-            ss >> p.id; 
-            ss.ignore(); 
+            getline(ss, status, ','); //le o status
+            p.status = status[0]; //armazena o status como um caractere
 
-            getline(ss, p.nome, ','); 
+            ss >> p.id; //le o id 
+            ss.ignore(); //ignora a virgula
 
-            ss >> p.preco; 
-            ss.ignore(); 
+            getline(ss, p.nome, ','); //le o nome 
 
-            ss >> p.quantidade; 
+            ss >> p.preco; //le o preco
+            ss.ignore();
 
-            produtos[quantidadeAtual] = p; 
-            quantidadeAtual++; 
+            ss >> p.quantidade; //le a quantidade
+
+            produtos[quantidadeAtual] = p; //armazena o produto no array
+            quantidadeAtual++; //incrementa
         }
     }
 
-    file.close(); 
+    file.close(); //fecha o ficheiro
 }
 
 //funcao para salvar produtos no ficheiro
 void saveProd(const Produto produtos[], int quantidadeAtual){
 
-    ofstream file(DBfile); 
+    ofstream file(DBfile); //abre o ficheiro (escrita) 
 
     for(int x = 0; x < quantidadeAtual; x++){ 
         
@@ -122,7 +123,7 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
     char opcao;
 
     if(quantidadeAtual == 0){
-        
+
         cout << "-----------------------------------------------" << endl;
         cout << "Sem produtos adicionados." << "\nVoltando ao menu..." << endl;
 
@@ -207,6 +208,7 @@ void changeProd(Produto produtos[], int quantidadeAtual){
 
     for(int y = 0; y < quantidadeAtual; y++){ 
 
+        //verifica se o produto existe e ativo
         if(produtos[y].id == id && produtos[y].status == 'A'){ 
 
             cout << "-----------------------------------------------" << endl;
@@ -223,7 +225,7 @@ void changeProd(Produto produtos[], int quantidadeAtual){
             cout << "-----------------------------------------------" << endl;
             cout << "Produto alterado com sucesso." << endl;
 
-            return; 
+            return; //fecha a funcao
         }
     }
 
@@ -279,17 +281,17 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
 
         if(quantidadeAtual == 0){ 
 
-            newProduct.id = 1; 
+            newProduct.id = 1; //se for o primeiro tem id 1
 
         } else{ 
 
-            newProduct.id = produtos[quantidadeAtual - 1].id + 1;
+            newProduct.id = produtos[quantidadeAtual - 1].id + 1; //atribui o proximo id
 
         }       
 
         cout << "-----------------------------------------------" << endl;
         cout << "Insira o nome do produto: ";
-        cin.ignore();
+        cin.ignore(); //limpa o buffer(espaco da memora temporario) para evitar erros com a leitura das strings
         getline(cin, newProduct.nome);
 
         cout << "-----------------------------------------------" << endl;
@@ -301,7 +303,7 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
         cin >> newProduct.quantidade;
 
         produtos[quantidadeAtual] = newProduct; 
-        quantidadeAtual++; 
+        quantidadeAtual++; //incrementa a quantidade de prod atuais
 
         saveProd(produtos, quantidadeAtual);
         system("clear");
