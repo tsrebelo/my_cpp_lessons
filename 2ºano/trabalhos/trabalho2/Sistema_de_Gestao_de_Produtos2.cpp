@@ -84,9 +84,11 @@ void saveProd(const Produto produtos[], int quantidadeAtual){
 
     ofstream file(DBfile); 
     for(int x = 0; x < quantidadeAtual; x++){ 
-        file << produtos[x].status << "," << produtos[x].id << "," 
-        << produtos[x].nome << "," << produtos[x].preco << ","
-        << produtos[x].quantidade << endl;
+        file << produtos[x].id << "," 
+        << produtos[x].nome << "," 
+        << produtos[x].preco << ","
+        << produtos[x].quantidade << "," 
+        << produtos[x].status << endl;
     }
     file.close();
 
