@@ -1,0 +1,4 @@
+A,1,t-shirt,23,34
+A,2,chocolate de leite,23,34
+E,3,camisa,23,4
+E,4,rg,45,3

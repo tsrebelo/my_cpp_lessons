@@ -230,7 +230,7 @@ void changeProd(Produto produtos[], int quantidadeAtual){
     }
 
     cout << "-----------------------------------------------" << endl;
-    cout << "Produto nao foi encontrado ou ja foi eliminado." << endl;
+    cout << "Produto não foi encontrado ou já foi eliminado." << endl;
 }
 
 //funcao para eliminar produtos
@@ -238,30 +238,36 @@ void eliminateProd(Produto produtos[], int quantidadeAtual){
 
     int id;
 
+
     cout << "-----------------------------------------------" << endl;
     cout << "Insira o ID do produto que deseja eliminar: ";
     cin >> id;
 
     for(int w = 0; w < quantidadeAtual; w++){
 
-        if(produtos[w].id == id){
+        if(produtos[w].status == 'A'){
 
-            produtos[w].status = 'E'; 
-            saveProd(produtos, quantidadeAtual);
+            if(produtos[w].id == id){
+
+                produtos[w].status = 'E'; 
+                saveProd(produtos, quantidadeAtual);
+
+                system("clear");
+
+                cout << "-----------------------------------------------" << endl;
+                cout << "Produto eliminado com sucesso!" << endl;
+
+                return;
+            }
+
+        } else {
 
             system("clear");
-
             cout << "-----------------------------------------------" << endl;
-            cout << "Produto eliminado com sucesso!" << endl;
+            cout << "Produto não foi encontrado ou já foi eliminado." << endl;
 
-            return;
         }
     }
-
-    system("clear");
-
-    cout << "-----------------------------------------------" << endl;
-    cout << "Produto nao encontrado." << endl;
 }
 
 //funcao que permite adicionar produtos
