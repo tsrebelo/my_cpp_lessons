@@ -1,11 +1,12 @@
-#include <iostream> 
-#include <fstream> //permite a manipulacao de ficheiros externos(como a leitura e escrita no ficheiro)
-#include <sstream> //para manipulacao de fluxos de strings, convertendo string em dados estruturados(util para ler ficheiros)
+#include <iostream> //importa a biblioteca para manipulacao de entrada e saida no terminal, como cin e cout(inputs e outputs)
+#include <fstream>//permite a manipulacao de ficheiros externos(como a leitura e escrita no ficheiro)
+#include <sstream>//para manipulacao de fluxos de strings, convertendo string em dados estruturados(util para ler ficheiros)
 using namespace std; //evita a necessidade de prefixar objetos da biblioteca padrao com std:: como cout, cin e strings
 
-const string DBfile = "lista.txt"; 
-const int prodMax = 80; 
+const string DBfile = "lista.txt"; //define o nome do arquivo onde os produtos serao armazenados
+const int prodMax = 80; //limita o numero max de produtos que o programa pode ter
 
+//define uma estrutura com atributos id, nome, preco, quantidade e status
 struct Produto{
     int id;
     string nome;
@@ -17,10 +18,12 @@ struct Produto{
 //função para verificar e criar o ficheiro de base de dados
 bool fileDB() {
 
-    ifstream file(DBfile);
+    ifstream file(DBfile); //abre o ficheiro se houver um
+
     if (!file) {
      
         char opcao;
+
         cout << "---------------------------------------------------------" << endl;
         cout << "O ficheiro de base de dados não foi encontrado." << endl;
         cout << "---------------------------------------------------------" << endl;
@@ -29,67 +32,84 @@ bool fileDB() {
 
         if (opcao == 'S' || opcao == 's') {
     
-            ofstream newFile(DBfile);
-            newFile.close();
+            ofstream newFile(DBfile); //cria um novo ficheiro
+
+            newFile.close(); //fecha o ficheiro
             system("clear");
+
             cout << "-----------------------------------------------" << endl;
             cout << "Ficheiro de base de dados criado com sucesso!" << endl;
-            return false; 
+
+            return false; //indica que o ficheiro foi criado
+
         } else {
-         
+            //sai do programa
             system("clear");
+
             cout << "-----------------------------------------------" << endl;
             cout << "A sair do programa..." << endl;
             cout << "-----------------------------------------------" << endl;
-            return false;
+
+            return false; //termina o programa
         }
     }
-    return true;
+
+    return true; //o arquivo já existe
 }
 
 //funcao para carregar produtos no ficheiro
 void loadProd(Produto produtos[], int& quantidadeAtual){
 
-    ifstream file(DBfile);
-    if (!file) return; 
+    ifstream file(DBfile); //abre o ficheiro (leitura)
+    if (!file) return; //se o ficheiro não puder ser aberto, sai da função
 
-    quantidadeAtual = 0;
+    quantidadeAtual = 0; 
+
     while (file.good() && quantidadeAtual < prodMax) {
+
         Produto p;
         string line;
 
-       
         if (getline(file, line)) {
+
             stringstream ss(line);
+
             string status; 
             getline(ss, status, ','); 
             p.status = status[0];
+
             ss >> p.id; 
             ss.ignore(); 
+
             getline(ss, p.nome, ','); 
+
             ss >> p.preco; 
             ss.ignore(); 
+
             ss >> p.quantidade; 
 
             produtos[quantidadeAtual] = p; 
             quantidadeAtual++; 
         }
     }
-    file.close(); 
 
+    file.close(); 
 }
 
 //funcao para salvar produtos no ficheiro
 void saveProd(const Produto produtos[], int quantidadeAtual){
 
     ofstream file(DBfile); 
+
     for(int x = 0; x < quantidadeAtual; x++){ 
-        file << produtos[x].id << "," 
+        
+        file << produtos[x].status << "," 
+        << produtos[x].id << "," 
         << produtos[x].nome << "," 
         << produtos[x].preco << ","
-        << produtos[x].quantidade << "," 
-        << produtos[x].status << endl;
+        << produtos[x].quantidade << endl;
     }
+
     file.close();
 
     cout << "-----------------------------------------------" << endl;
@@ -100,9 +120,12 @@ void saveProd(const Produto produtos[], int quantidadeAtual){
 void consultProd(const Produto produtos[], int quantidadeAtual){
 
     char opcao;
+
     if(quantidadeAtual == 0){
+        
         cout << "-----------------------------------------------" << endl;
         cout << "Sem produtos adicionados." << "\nVoltando ao menu..." << endl;
+
         return;
 
     } else{
@@ -110,12 +133,14 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
         cout << "------------------------------------------------------------------" << endl;
         cout << "Quer consultar os produtos ativos(A), eliminados(E) ou todos(T)? ";
         cin >> opcao;
+
         system("clear");
 
         if(opcao == 'A' || opcao == 'a'){
 
             cout << "-----------------------------------------------" << endl;
             cout << "           Lista de produtos ativos" << endl; 
+
             for(int a = 0; a < quantidadeAtual; a++){
 
                 if(produtos[a].status == 'A'){ 
@@ -135,6 +160,7 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
 
             cout << "-----------------------------------------------" << endl;
             cout << "         Lista de produtos eliminados" << endl; 
+
             for(int e = 0; e < quantidadeAtual; e++){
 
                 if(produtos[e].status == 'E'){ 
@@ -154,6 +180,7 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
 
             cout << "-----------------------------------------------" << endl;
             cout << "          Lista de todos os produtos" << endl; 
+
             for(int t=0; t<quantidadeAtual; t++){
                 cout << "-----------------------------------------------" << endl;
                 cout << "ID: " << produtos[t].id << endl;
@@ -171,9 +198,11 @@ void consultProd(const Produto produtos[], int quantidadeAtual){
 void changeProd(Produto produtos[], int quantidadeAtual){
 
     int id; 
+
     cout << "-----------------------------------------------" << endl;
     cout << "Insira o ID do produto que deseja alterar: "; 
     cin >> id; 
+
     system("clear");
 
     for(int y = 0; y < quantidadeAtual; y++){ 
@@ -183,16 +212,18 @@ void changeProd(Produto produtos[], int quantidadeAtual){
             cout << "-----------------------------------------------" << endl;
             cout << "Insira o novo preço do produto: ";
             cin >> produtos[y].preco;
+
             cout << "-----------------------------------------------" << endl;
             cout << "Insira a nova quantidade do produto: ";
             cin >> produtos[y].quantidade;
 
             saveProd(produtos, quantidadeAtual); 
             system("clear");
+
             cout << "-----------------------------------------------" << endl;
             cout << "Produto alterado com sucesso." << endl;
-            return;
 
+            return; 
         }
     }
 
@@ -204,6 +235,7 @@ void changeProd(Produto produtos[], int quantidadeAtual){
 void eliminateProd(Produto produtos[], int quantidadeAtual){
 
     int id;
+
     cout << "-----------------------------------------------" << endl;
     cout << "Insira o ID do produto que deseja eliminar: ";
     cin >> id;
@@ -216,14 +248,16 @@ void eliminateProd(Produto produtos[], int quantidadeAtual){
             saveProd(produtos, quantidadeAtual);
 
             system("clear");
+
             cout << "-----------------------------------------------" << endl;
             cout << "Produto eliminado com sucesso!" << endl;
-            return;
 
+            return;
         }
     }
 
     system("clear");
+
     cout << "-----------------------------------------------" << endl;
     cout << "Produto nao encontrado." << endl;
 }
@@ -235,6 +269,7 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
 
         cout << "-----------------------------------------------" << endl;
         cout << "Atingiu o limite máximo de produtos." << "\nNão é possível adicionar mais produtos." << endl;
+
         return;
 
     } else{
@@ -243,10 +278,12 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
         newProduct.status = 'A'; 
 
         if(quantidadeAtual == 0){ 
+
             newProduct.id = 1; 
 
         } else{ 
-            newProduct.id = produtos[quantidadeAtual - 1].id + 1; 
+
+            newProduct.id = produtos[quantidadeAtual - 1].id + 1;
 
         }       
 
@@ -277,11 +314,12 @@ void addProduto(Produto produtos[], int& quantidadeAtual){
 //funcao que calcula o valor do preco total dos produtos
 float calcularValorTotal(const Produto produtos[], int quantidadeAtual) {
 
-    float total = 0.0;
+    float total = 0;
 
     for (int i = 0; i < quantidadeAtual; i++) {
 
         if (produtos[i].status == 'A') { 
+
             total += produtos[i].preco * produtos[i].quantidade;
         }
     }
@@ -322,28 +360,42 @@ loadProd(produtos, quantidadeAtual);
         system("clear");
 
         switch (escolha) {
+
         case 1:
+
             addProduto(produtos, quantidadeAtual); 
             break;
+
         case 2:
+
             cout << "-----------------------------------------------" << endl;
             cout << "O valor total em stock é: " << calcularValorTotal(produtos, quantidadeAtual) << "€" << endl;
             break;
+
         case 3:
+
             consultProd(produtos, quantidadeAtual); 
             break;
+
         case 4:
+
             changeProd(produtos, quantidadeAtual); 
             break;
+
         case 5:
+
             eliminateProd(produtos, quantidadeAtual); 
             break;
+
         case 0: 
+
             cout << "-----------------------------------------------" << endl;
             cout << "A sair do programa..." << endl; 
             cout << "-----------------------------------------------" << endl;
             break;
+
         default:
+
             cout << "-----------------------------------------------" << endl;
             cout << "Opção inválida! Voltando ao menu..." << endl;
         }
