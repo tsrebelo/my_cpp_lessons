@@ -6,7 +6,8 @@ using namespace std; //evita a necessidade de prefixar objetos da biblioteca pad
 const string DBfile = "lista.txt"; //define o nome do arquivo onde os produtos serao armazenados
 const int prodMax = 80; //limita o numero max de produtos que o programa pode ter
 
-struct Produto{ //define uma estrutura com atributos id, nome, preco, quantidade e status
+//define uma estrutura com atributos id, nome, preco, quantidade e status
+struct Produto{
     int id;
     string nome;
     float preco;
@@ -27,30 +28,34 @@ bool fileDB() {
         cin >> opcao;
 
         if (opcao == 'S' || opcao == 's') {
-            // Cria um novo ficheiro
-            ofstream newFile(DBfile);
-            newFile.close(); // Fecha o arquivo
+            
+            ofstream newFile(DBfile); //cria um novo ficheiro
+            newFile.close(); //fecha o ficheiro
             system("clear");
             cout << "-----------------------------------------------" << endl;
             cout << "Ficheiro de base de dados criado com sucesso!" << endl;
-            return false; // Indica que o arquivo foi criado
+            
+            return false; //indica que o arquivo foi criado
+            
         } else {
-            // Sai do programa
+            //sai do programa
             system("clear");
+            
             cout << "-----------------------------------------------" << endl;
             cout << "A sair do programa..." << endl;
             cout << "-----------------------------------------------" << endl;
-            return 0; // Termina o programa
+            
+            return 0; //termina o programa
         }
     }
-    return true; // O arquivo já existe
+    return true; //o arquivo já existe
 }
 
 //funcao para carregar produtos no ficheiro
 void loadProd(Produto produtos[], int& quantidadeAtual){
 
     ifstream file(DBfile);
-    if (!file) return; // Se o arquivo não pode ser aberto, sai da função
+    if (!file) return; //se o ficheiro não aberti, sai da função
 
     quantidadeAtual = 0; // Reseta a contagem de produtos carregados
     while (file.good() && quantidadeAtual < prodMax) {
@@ -74,7 +79,7 @@ void loadProd(Produto produtos[], int& quantidadeAtual){
             quantidadeAtual++; // Incrementa a quantidade atual
         }
     }
-    file.close(); // Fecha o arquivo
+    file.close(); //fecha o arquivo
 
 }
 
@@ -83,9 +88,12 @@ void saveProd(const Produto produtos[], int quantidadeAtual){
 
     ofstream file(DBfile); //cria um objeto ofstream para abrir o focheiro. Esse objeto abre o ficheiro para gravacao. Se ja existir o ficheiro ele vai ser sobrescrito
     for(int x = 0; x < quantidadeAtual; x++){ //ciclo for que percorre o array de produtos desdo indice 0 ate quantidadeAtual, salva todos os produtos existentes no array
-        file << produtos[x].status << "," << produtos[x].id << ","  //para cada produto no array,a funcao escreve os dados
-        << produtos[x].nome << "," << produtos[x].preco << "," // << serve para gravar dados no ficheiro
-        << produtos[x].quantidade << endl;
+        file produtos[x].id << ","  //para cada produto no array,a funcao escreve os dados
+        << produtos[x].nome << "," 
+        << produtos[x].quantidade  << "," 
+        << produtos[x].status << endl;
+        << produtos[x].preco << "," 
+        // << serve para gravar dados no ficheiro
     }
     file.close(); //fecha o ficheiro
 
