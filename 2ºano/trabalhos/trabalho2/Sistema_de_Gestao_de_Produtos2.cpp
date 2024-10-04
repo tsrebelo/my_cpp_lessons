@@ -67,7 +67,8 @@ void loadProd(Produto produtos[], int& quantidadeAtual){
 
     //enquanto houver dados no ficheiro e a quantidade atual for menor que prodMax
     while (file.good() && quantidadeAtual < prodMax) {
-        //file.good() abre o ficheiro corretamente e verifica 
+        //file.good() abre o ficheiro corretamente
+        //e verifica se ao ler ocorreu problemas
 
         Produto p;
         string line;
