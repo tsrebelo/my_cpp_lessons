@@ -50,7 +50,7 @@ bool fileDB() {
             cout << "A sair do programa..." << endl;
             cout << "-----------------------------------------------" << endl;
 
-            return false; //termina o programa
+            exit(0); //termina o programa
         }
     }
 
