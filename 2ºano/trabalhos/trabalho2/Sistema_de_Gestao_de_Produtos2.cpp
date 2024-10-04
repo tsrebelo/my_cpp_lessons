@@ -4,7 +4,7 @@
 using namespace std; //evita a necessidade de prefixar objetos da biblioteca padrao com std:: como cout, cin e strings
 
 const string DBfile = "lista.txt"; //define o nome do ficheiro onde os produtos serao armazenados
-const int prodMax = 80; //limita o numero max de produtos que o programa pode ter
+const int prodMax = 80;
 
 //define uma estrutura com atributos id, nome, preco, quantidade e status
 struct Produto{
