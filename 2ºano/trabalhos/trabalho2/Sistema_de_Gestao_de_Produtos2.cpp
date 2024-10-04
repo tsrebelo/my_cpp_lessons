@@ -54,7 +54,7 @@ bool fileDB() {
         }
     }
 
-    return true; //o arquivo já existe
+    return true; //o ficheiro já existe
 }
 
 //funcao para carregar produtos no ficheiro
