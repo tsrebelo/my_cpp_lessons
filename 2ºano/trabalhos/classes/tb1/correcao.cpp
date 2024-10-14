@@ -175,9 +175,18 @@ class Computer{
             }
         }
 
-        void input(string input){
+        void input() {
 
+            if (state){
+
+                cout << "Recebendo input" << endl;
+
+            } else{
+                
+                cout << "O computador nao esta ligado" << endl;
+            }
         }
+        
 };
 
 int main(){
