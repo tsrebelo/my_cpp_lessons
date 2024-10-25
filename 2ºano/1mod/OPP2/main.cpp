@@ -6,4 +6,6 @@ int main(){
     system("clear");
     Hello_World();
     imprimeNome();
+    
+    return 0;
 }

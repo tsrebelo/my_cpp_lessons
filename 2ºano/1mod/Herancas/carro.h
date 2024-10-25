@@ -1,7 +1,8 @@
 #include <iostream>
+#include "acoes.h"
 using namespace std;
 
-class Carro{
+class Carro : public Acoes{
     private:
         string marca;
         string modelo;
