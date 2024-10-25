@@ -1,2 +1,5 @@
 c++ -o *nome da compilação* *nome do ficheiro*.cpp
 ./*nome da compilação*
+
+
+c++ -o *nome da compilação* *.cpp
