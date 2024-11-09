@@ -1,7 +1,7 @@
 #ifndef VEICULO_H
 #define VEICULO_H
 
-#include "biblioteca.h"
+#include "biblioteca.h" // chama o arquivo 
 
 class Veiculo {
 
@@ -11,7 +11,7 @@ class Veiculo {
     public:
         Veiculo(string nome);
 
-        virtual void mostraDetalhes();
+        virtual void mostraDetalhes(); // pode ser sobrescrito em classes derivadas de Veiculo
 
 };
 
