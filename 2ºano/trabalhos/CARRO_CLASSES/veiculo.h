@@ -3,7 +3,7 @@
 
 #include "biblioteca.h"
 
-class Veiculo {
+class Veiculo{
 
     protected:
         string nome;
