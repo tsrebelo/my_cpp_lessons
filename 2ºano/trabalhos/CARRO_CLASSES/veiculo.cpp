@@ -4,6 +4,6 @@ Veiculo::Veiculo(string nome) : nome(nome){
 
 }
 
-void Veiculo::overWrite(){
+void Veiculo::mostraDetalhes(){
     cout << "Nome do veiculo: " << nome << endl;
 }

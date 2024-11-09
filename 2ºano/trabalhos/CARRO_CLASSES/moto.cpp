@@ -1,10 +1,10 @@
 #include "moto.h"
 
-Moto::Moto(string nome, int cilindros, int cv) : Veiculo(nome), cilindros(cilindros), potencia(cv){
+Moto::Moto(string nome, string guidao) : Veiculo(nome), guidao(guidao){
 
 }
 
-void Moto::overWrite(){
-    cout << "Nome da moto: " << nome << "\nCilindros: " << cilindros << "\nPotência: " << potencia  << "cv" << endl;
+void Moto::mostraDetalhes(){
+    cout << "Nome da moto: " << nome << "\nTipo de guidão: " << guidao << endl;
     cout << "------------------------------------" << endl;
 }
