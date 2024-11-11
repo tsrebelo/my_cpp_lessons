@@ -11,7 +11,7 @@ class Veiculo{
     public:
         Veiculo(string nome);
 
-        virtual void overWrite();
+        virtual void mostraDetalhes();
 
 };
 

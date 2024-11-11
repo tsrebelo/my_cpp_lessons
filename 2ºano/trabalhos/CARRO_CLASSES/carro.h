@@ -7,12 +7,11 @@ class Carro : public Veiculo {
 
     private:   
         int portas;
-        float cc;
         
     public:
-        Carro(string nome, int portas, float cc);
+        Carro(string nome, int portas);
 
-        virtual void overWrite() override;
+        virtual void mostraDetalhes() override;
 };
 
 #endif

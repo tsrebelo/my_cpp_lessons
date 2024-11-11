@@ -5,11 +5,11 @@ int main(){
 
     system("clear");
 
-    Carro carro1("BMW M4 Competition", 2, 2.993);
-    Moto moto1("HONDA CBR 650R", 4, 95);
+    Carro carro1("BMW M4 Competition", 2);
+    Moto moto1("HONDA CBR 650R", "desportivo");
 
-    carro1.overWrite();
-    moto1.overWrite();
+    carro1.mostraDetalhes();
+    moto1.mostraDetalhes();
 
     return 0;
 }

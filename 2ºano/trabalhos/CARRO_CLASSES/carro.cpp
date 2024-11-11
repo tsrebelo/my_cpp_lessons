@@ -1,11 +1,11 @@
 #include "carro.h"
 
-Carro::Carro(string nome, int portas, float cc) : Veiculo(nome), portas(portas), cc(cc){
+Carro::Carro(string nome, int portas) : Veiculo(nome), portas(portas){
 
 }
 
-void Carro::overWrite(){
+void Carro::mostraDetalhes(){
     cout << "------------------------------------" << endl;
-    cout << "Nome do carro: " << nome << "\nQuantidade de portas: " << portas << "\nCilindrada: " << cc << " cm³" << endl;
+    cout << "Nome do carro: " << nome << "\nQuantidade de portas: " << portas << endl;
     cout << "------------------------------------" << endl;
 }

@@ -6,13 +6,12 @@
 class Moto : public Veiculo{
 
     private:
-        int potencia;
-        int cilindros;
+        string guidao;
 
     public:
-        Moto(string nome, int cv, int cilindros);
+        Moto(string nome, string guidao);
         
-        virtual void overWrite();
+        virtual void mostraDetalhes();
 
 };
 
