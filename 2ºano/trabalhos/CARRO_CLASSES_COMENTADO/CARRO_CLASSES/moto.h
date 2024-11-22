@@ -9,7 +9,7 @@ class Moto : public Veiculo{ // declara a classe Moto, que herda da classe base 
         string guidao; // declara o atributo "guidao" que armazena o tipo de guidão da moto
 
     public:
-        Moto(string nome, string guidao); // Ddclaração do construtor da classe Moto.
+        Moto(string nome, string guidao); // declaração do construtor da classe Moto.
         
         virtual void mostraDetalhes(); // declaração do método mostraDetalhes que sobrescreve o método da classe base
 
