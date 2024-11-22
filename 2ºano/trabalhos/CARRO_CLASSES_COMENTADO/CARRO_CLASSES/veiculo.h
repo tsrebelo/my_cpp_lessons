@@ -1,3 +1,5 @@
+//DEFINE
+
 #ifndef VEICULO_H // verifica se não foi definida
 #define VEICULO_H // define para evitar múltiplas inclusões no ficheiro
 

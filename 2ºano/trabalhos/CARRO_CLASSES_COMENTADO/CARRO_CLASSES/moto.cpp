@@ -1,3 +1,5 @@
+//DECLARA
+
 #include "moto.h" // inclui o ficheiro onde a classe Moto é definida
 
 

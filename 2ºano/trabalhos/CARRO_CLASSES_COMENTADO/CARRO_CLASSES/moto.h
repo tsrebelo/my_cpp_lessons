@@ -1,3 +1,5 @@
+//DEFINE
+
 #ifndef MOTO_H // verifica se não foi definida
 #define MOTO_H // define para evitar múltiplas inclusões no ficheiro
 

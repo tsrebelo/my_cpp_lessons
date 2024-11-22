@@ -1,3 +1,5 @@
+//DEFINE
+
 #ifndef BIBLIOTECA_H // verifica se não foi definida
 #define BIBLIOTECA_H // define para evitar múltiplas inclusões no ficheiro
 
