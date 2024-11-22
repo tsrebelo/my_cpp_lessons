@@ -1,17 +1,17 @@
-#ifndef VEICULO_H
-#define VEICULO_H
+#ifndef VEICULO_H 
+#define VEICULO_H 
 
-#include "biblioteca.h"
+#include "biblioteca.h" 
 
-class Veiculo{
+class Veiculo{ 
 
     protected:
-        string nome;
+        string nome; 
 
     public:
-        Veiculo(string nome);
+        Veiculo(string nome); 
 
-        virtual void mostraDetalhes();
+        virtual void mostraDetalhes(); 
 
 };
 

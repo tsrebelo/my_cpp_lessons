@@ -1,17 +1,17 @@
 #ifndef CARRO_H
-#define CARRO_H
+#define CARRO_H 
 
-#include "veiculo.h"
+#include "veiculo.h" 
 
-class Carro : public Veiculo {
+class Carro : public Veiculo { 
 
     private:   
-        int portas;
+        int portas; 
         
     public:
-        Carro(string nome, int portas);
+        Carro(string nome, int portas); 
 
-        virtual void mostraDetalhes() override;
+        virtual void mostraDetalhes() override; 
 };
 
-#endif
+#endif 

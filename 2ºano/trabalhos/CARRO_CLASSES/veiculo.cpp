@@ -1,9 +1,9 @@
-#include "veiculo.h"
+#include "veiculo.h" 
 
-Veiculo::Veiculo(string nome) : nome(nome){
+Veiculo::Veiculo(string nome) : nome(nome){ 
 
 }
 
-void Veiculo::mostraDetalhes(){
-    cout << "Nome do veiculo: " << nome << endl;
+void Veiculo::mostraDetalhes(){ 
+    cout << "Nome do veiculo: " << nome << endl; 
 }

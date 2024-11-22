@@ -1,18 +1,18 @@
-#ifndef MOTO_H
-#define MOTO_H
+#ifndef MOTO_H 
+#define MOTO_H 
 
-#include "veiculo.h"
+#include "veiculo.h" 
 
-class Moto : public Veiculo{
+class Moto : public Veiculo{ 
 
     private:
-        string guidao;
+        string guidao; 
 
     public:
-        Moto(string nome, string guidao);
+        Moto(string nome, string guidao); 
         
-        virtual void mostraDetalhes();
+        virtual void mostraDetalhes(); 
 
 };
 
-#endif
+#endif 
