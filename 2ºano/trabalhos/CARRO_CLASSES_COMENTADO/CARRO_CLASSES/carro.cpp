@@ -1,4 +1,4 @@
-//DECLARA
+//DECLARA / implementa
 
 #include "carro.h" // inclui o ficheiro onde a classe Carro é definida
 
