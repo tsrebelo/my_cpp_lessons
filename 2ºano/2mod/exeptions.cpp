@@ -25,10 +25,13 @@ int main(){
             throw "O";
         }catch(const char *e){ //*e apontando para endereço de memória onde está o 'e'
             if(e[0] == 'E'){
+                cout << "--------------------------------" << endl;
                 cout << "Erro ao abrir o ficheiro" << endl;
                 cout << "--------------------------------" << endl;
             }else{
+                cout << "--------------------------------" << endl;
                 cout << "Ficheiro aberto com sucesso" << endl;
+                cout << "--------------------------------" << endl;
                 break;
             }
         }
