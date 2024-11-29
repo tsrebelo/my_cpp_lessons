@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <stack>
+#include <queue>
 using namespace std;
 
 vector<int> numeros = {6, 7, 3, 2, 9};
