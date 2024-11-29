@@ -4,13 +4,28 @@
 #include <stack>
 #include <queue>
 #include <deque>
+#include <set>
+#include <map>
 using namespace std;
 
 vector<int> numeros = {6, 7, 3, 2, 9};
 
-list<int> lista = {1, 2, 3, 4, 5, 6, 7, 8, 9 ,10};
+map<string, int> mapa = {
 
-void vetor(){
+    {"um", 1},
+    {"dois", 2},
+    {"três", 3},
+    {"quatro", 4},
+    {"cinco", 5},
+    {"seis", 6},
+    {"sete", 7},
+    {"oito", 8},
+    {"nove", 9},
+    {"dez", 10}
+
+};
+
+void vectorr(){
 
     system("clear");
 
@@ -42,15 +57,17 @@ void vetor(){
     cout << "-----------------------------------------------------" << endl;
 }
 
-void listaa(){
+void mapaa(){
 
-    
+    system("clear");
+    cout << mapa["um"] << endl;
 
 }
 
 int main(){
 
-    vetor();
+    vectorr();
+    mapaa();
 
     return 0;
 }
