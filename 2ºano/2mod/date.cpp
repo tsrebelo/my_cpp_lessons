@@ -11,22 +11,22 @@
 #include <ctime>
 using namespace std;
 
-//
-// /**
-//  * @name função para limpar o ecrã
-//  * @details
-//  * @param int valor vlvla al
-//  * @return void
-//  */
-// void clearScreen(){
-//     system("clear");
-// }
-//
+
+/**
+ * @name função para limpar o ecrã
+ * @details
+ * @param int valor vlvla al
+ * @return void
+ */
+void clearScreen(){
+     system("clear");
+}
+
 
 int main(){
 
 
-
+    clearScreen();
 
 
     return 0;

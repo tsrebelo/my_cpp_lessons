@@ -1,4 +1,0 @@
-A,1,t-shirt,23,423
-A,2,chocolate de leite,2,33
-E,3,camisa,10,12
-E,4,chourico,8,345
