@@ -1,10 +1,13 @@
 #include <iostream>
 #include <vector>
+#include <list>
 using namespace std;
 
 vector<int> numeros = {6, 7, 3, 2, 9};
 
-int main(){
+list<int> lista = {1, 2, 3, 4, 5, 6, 7, 8, 9 ,10};
+
+void vetor(){
 
     system("clear");
 
@@ -34,6 +37,17 @@ int main(){
 
     cout << endl;
     cout << "-----------------------------------------------------" << endl;
+}
+
+void listaa(){
+
+    
+
+}
+
+int main(){
+
+    vetor();
 
     return 0;
 }
