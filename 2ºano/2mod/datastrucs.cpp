@@ -3,6 +3,7 @@
 #include <list>
 #include <stack>
 #include <queue>
+#include <deque>
 using namespace std;
 
 vector<int> numeros = {6, 7, 3, 2, 9};
