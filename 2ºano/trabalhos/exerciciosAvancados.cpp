@@ -59,7 +59,9 @@ void graficoHorizontal(int x, int y, int z){
 }
 
 int main(){
+
     int x, y, z;
     graficoHorizontal(x, y, z);
+    
     return 0;
 }
