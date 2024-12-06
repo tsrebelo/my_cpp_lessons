@@ -8,16 +8,13 @@ void matriz(int dim){
     system("clear");
     int count = 0;
 
-    for(int i=0; i<=dim; i++){
-        for(int n=1; n<=dim; n++) cout << setw(5) << ++count; 
+    for(int i=0; i<dim; i++){  
+        for(int n=0; n<dim; n++)  
+            cout << setw(5) << ++count; 
         cout << endl;
     }
     cout << endl;
 }
-
-float x = 1.5;
-string y = "Hello";
-int z = 5;
 
 int main() {
 
@@ -25,7 +22,7 @@ int main() {
 
     int dim;
 
-    cout << "Digite a dimensão da matriz (um número inteiro): ";
+    cout << "Digite a dimensão da matriz: ";
      cin >> dim;
 
     if (cin.fail()) {
@@ -38,7 +35,7 @@ int main() {
             return 1;
         } else {
 
-            matriz(6);
+            matriz(dim);
         }
 
     return 0;

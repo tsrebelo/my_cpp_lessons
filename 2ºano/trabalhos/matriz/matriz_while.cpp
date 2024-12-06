@@ -8,8 +8,6 @@ void matriz(int dim){
     system("clear");
     int count = 0;
 
-    cout << "Tipo de dado de 'dim': " << typeid(dim).name() << endl;
-
     for(int i=0; i<dim; i++){  
         for(int n=0; n<dim; n++)  
             cout << setw(5) << ++count; 
@@ -20,10 +18,12 @@ void matriz(int dim){
 
 int main() {
 
+    system("clear");
+
     int dim;
 
     while (true) {
-        cout << "Digite a dimensão da matriz (um número inteiro): ";
+        cout << "Digite a dimensão da matriz: ";
         cin >> dim;
 
         if (cin.fail()) {
