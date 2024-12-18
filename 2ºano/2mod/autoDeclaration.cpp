@@ -92,7 +92,7 @@ int main(){
 
     system("clear");
     
-    decisions();
+    escape();
 
     return 0;
 }
