@@ -29,7 +29,6 @@ void joguin(){
 
     while(adivinha != frase){
 
-
         cout << "Frase a ser adivinhada: " << adivinha << endl;
         cout << "Digite uma letra ou a frase inteira: ";
         getline(cin, entrada);
@@ -56,11 +55,11 @@ void joguin(){
             } 
         }
 
-        else {
-            if (entrada == frase) {
+        else{
+            if (entrada == frase){
                 adivinha = frase; 
                 break;
-            } else {
+            } else{
                 system("clear");
                 cout << "Frase incorreta! \n" << endl;
             }
@@ -71,7 +70,7 @@ void joguin(){
 }
 
 int main(){
-    
+
     system("clear");
     cout << "Bem-vindo/a ao Jogo do Adivinha!\n" << endl;
     joguin();
