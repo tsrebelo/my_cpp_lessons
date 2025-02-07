@@ -71,10 +71,10 @@ void joguin(){
 }
 
 int main(){
+    
     system("clear");
     cout << "Bem-vindo/a ao Jogo do Adivinha!\n" << endl;
     joguin();
-
 
     return 0;
 }
