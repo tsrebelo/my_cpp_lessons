@@ -6,11 +6,11 @@
 #include <iostream>
 using namespace std;
 
-int main(){
-    system("clear");
-    string frase, adivinha;
-    string entrada;
-    char letra;
+string frase, adivinha;
+string entrada;
+char letra;
+
+void joguin(){
 
     cout << "Insira uma frase: ";
     getline(cin, frase);
@@ -68,6 +68,12 @@ int main(){
     }
     system("clear");
     cout << "Parabéns acertou a frase: " << frase << endl;
+}
+
+int main(){
+    system("clear");
+    cout << "Bem-vindo/a ao Jogo do Adivinha!\n" << endl;
+    joguin();
 
 
     return 0;
