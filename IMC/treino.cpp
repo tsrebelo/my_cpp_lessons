@@ -1,7 +1,16 @@
+/**
+ * @author Telma Silva Rebelo
+ * @brief Trabalho 2 - Calculadora de IMC
+ * @file treino.cpp
+ * @date 14/02/2025
+ */
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
+/**
+ * @brief função que calcula o IMC
+ */
 float calculaIMC(float peso, float altura){
     return peso / (altura * altura);
 }
