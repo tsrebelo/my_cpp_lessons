@@ -10,12 +10,12 @@ void executarJogo() {
     vector<CartaBingo> cartas;
 
     while (true) {
-        limparTela();
+        system("clear");
         exibirMenuPrincipal();
         cin >> opcao;
 
         if (opcao == 1) {
-            limparTela();
+            system("clear");
             exibirMenuCriarCartas();
             int quantidade;
             cin >> quantidade;
@@ -27,11 +27,12 @@ void executarJogo() {
                 salvarCarta(carta, "carta" + to_string(i + 1) + ".txt");
             }
 
-            cout << "Cartas salvas em arquivos separados!\n";
+            cout << "\nClique ENTER para voltar ao menu...";  // Mensagem alterada aqui
             cin.ignore();
             cin.get();
+
         } else if (opcao == 2) {
-            limparTela();
+            system("clear");
             exibirMenuJogo();
             cin >> opcao;
 
