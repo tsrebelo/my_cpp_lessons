@@ -1,0 +1,11 @@
+----------------------------------------------
+Calcular IMC --> peso / (altura * altura)
+----------------------------------------------
+IMC (Indice de Massa Corporal)
+< 18.5 (peso baixo)
+>= 18.5 < 24.9 (peso normal)
+>= 25.00 < 29.9 (sobrepeso)
+>= 30.00 < 34.9 (obesidade grau 1)
+>= 35.00 < 39.9 (obesidade grau 2)
+>= 40 (obesidade grau 3)
+----------------------------------------------
