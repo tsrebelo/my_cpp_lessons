@@ -1,4 +1,5 @@
 #include "bibliotecas.h"
+#include "cores.h"
 #include "menu.h"
 
 void limparTela() {
@@ -10,7 +11,7 @@ void limparTela() {
 }
 
 void exibirMenuPrincipal() {
-    cout << BOLD << CYAN << "Bem-vindo ao Jogo de Bingo!\n" << RESET;
+    cout << BOLD << YELLOW << "Bem-vindo ao Jogo de Bingo!\n" << RESET;
     cout << "1. Criar Cartas\n";
     cout << "2. Iniciar Jogo\n";
     cout << "3. Sair\n";
