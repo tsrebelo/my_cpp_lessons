@@ -36,7 +36,7 @@ void exibirMenuCriarCartas(){
 void exibirMenuJogo(){
 
     cout << BOLD << CYAN << "Escolha o modo de jogo:\n" << RESET;
-    cout << "1. Jogo Automático\n";
+    cout << "\n1. Jogo Automático\n";
     cout << "2. Jogo Manual\n";
     cout << "\nEscolha uma opção: ";
 }
