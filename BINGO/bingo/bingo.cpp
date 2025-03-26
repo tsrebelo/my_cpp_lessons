@@ -69,7 +69,7 @@ void exibirTabela(const vector<int>& numerosSorteados){
     cout << BOLD << CYAN << "Tabela de Números (1 a 75):\n" << RESET;
     for(int i = 1; i <= 75; i++){
         if(find(numerosSorteados.begin(), numerosSorteados.end(), i) != numerosSorteados.end()){
-            cout << BOLD << i << RESET << "\t";
+            cout << BOLD << WHITE << i << RESET << "\t";
         }else{
             cout << i << "\t";
         }
