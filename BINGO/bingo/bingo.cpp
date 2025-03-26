@@ -1,7 +1,17 @@
+/**
+ * @brief Ficheiro de implementação da struct e funções declaradas no bingo.h
+ * 
+ */
+
 #include "bibliotecas.h"
 #include "cores.h"
 #include "bingo.h"
 
+/**
+ * @brief Cria uma carta de bingo válida com números aleatórios nas colunas apropriadas
+ * 
+ * 
+ */
 CartaBingo gerarCarta(){
 
     CartaBingo carta;
@@ -26,7 +36,10 @@ CartaBingo gerarCarta(){
     return carta;
 }
 
-
+/**
+ * @brief Função que salva uma carta em um arquivo de texto com formatação
+ * 
+ */
 void salvarCarta(const CartaBingo& carta, const string& arquivo){
     ofstream arquivoSaida(arquivo);
     if(!arquivoSaida.is_open()){
@@ -48,6 +61,10 @@ void salvarCarta(const CartaBingo& carta, const string& arquivo){
     arquivoSaida.close();
 }
 
+/**
+ * @brief Função que exibe uma tabela com todos os números de 1 a 75, que vai destacando os sorteados
+ * 
+ */
 void exibirTabela(const vector<int>& numerosSorteados){
     cout << BOLD << CYAN << "Tabela de Números (1 a 75):\n" << RESET;
     for(int i = 1; i <= 75; i++){
@@ -64,6 +81,10 @@ void exibirTabela(const vector<int>& numerosSorteados){
     cout << "\n";
 }
 
+/**
+ * @brief Função que controla a execução do jogo, que vai sorteando números e mostrando o progresso
+ * 
+ */
 void iniciarJogo(bool automatico){
     vector<int> numerosSorteados;
     vector<int> todosNumeros;
