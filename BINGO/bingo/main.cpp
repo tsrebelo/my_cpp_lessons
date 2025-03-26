@@ -1,3 +1,8 @@
+/**
+ * @authors Telma Silva Rebelo e Martim Valério
+ * 
+ */
+
 #include "jogo.h"
 
 int main(){
