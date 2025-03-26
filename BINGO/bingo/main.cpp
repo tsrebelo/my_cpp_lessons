@@ -4,6 +4,7 @@
  * 
  * @brief Ficheiro principal que inicia a execução do jogo do bingo.
  * Contém apenas a função main que chama a função executarJogo().
+ * 
  */
 
 #include "jogo.h"
