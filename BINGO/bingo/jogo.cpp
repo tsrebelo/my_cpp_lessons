@@ -50,14 +50,18 @@ void executarJogo(){
             }else if (opcao == 2){
                 iniciarJogo(false);
             }else{
-                cout << "Opção inválida!";
+                system("clear");
+                cerr << "Opção inválida!\n";
+                cout << "\nPressione ENTER para voltar ao menu...";
                 cin.get();
             }
 
         }else if(opcao == 3){
             break;
         }else{
-            cout << "Opção inválida!";
+            system("clear");
+            cerr << "Opção inválida!\n";
+            cout << "\nPressione ENTER para voltar ao menu...";
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cin.get();
         }
