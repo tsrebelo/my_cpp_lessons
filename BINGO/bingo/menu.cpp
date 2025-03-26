@@ -21,5 +21,5 @@ void exibirMenuJogo(){
     cout << BOLD << CYAN << "Escolha o modo de jogo:\n" << RESET;
     cout << "1. Jogo Automático\n";
     cout << "2. Jogo Manual\n";
-    cout << "Escolha uma opção: ";
+    cout << "\nEscolha uma opção: ";
 }
