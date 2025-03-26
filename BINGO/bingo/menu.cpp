@@ -14,7 +14,7 @@
 void exibirMenuPrincipal(){
 
     cout << BOLD << YELLOW << "Bem-vindo ao Jogo de Bingo!\n" << RESET;
-    cout << "1. Criar Cartas\n";
+    cout << "\n1. Criar Cartas\n";
     cout << "2. Iniciar Jogo\n";
     cout << "3. Sair\n";
     cout << "\nEscolha uma opção: ";
