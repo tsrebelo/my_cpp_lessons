@@ -2,16 +2,17 @@
 #include "cores.h"
 #include "bingo.h"
 
-CartaBingo gerarCarta() {
+CartaBingo gerarCarta(){
+
     CartaBingo carta;
     carta.numeros.resize(5, vector<int>(5));
 
-    for (int col = 0; col < 5; col++) {
+    for(int col = 0; col < 5; col++){
         vector<int> numerosColuna;
         int inicio = 1 + col * 15;
         int fim = inicio + 15;
 
-        for (int i = inicio; i < fim; i++) {
+        for(int i = inicio; i < fim; i++){
             numerosColuna.push_back(i);
         }
 
@@ -26,19 +27,19 @@ CartaBingo gerarCarta() {
 }
 
 
-void salvarCarta(const CartaBingo& carta, const string& arquivo) {
+void salvarCarta(const CartaBingo& carta, const string& arquivo){
     ofstream arquivoSaida(arquivo);
-    if (!arquivoSaida.is_open()) {
+    if(!arquivoSaida.is_open()){
         cerr << "Erro ao criar arquivo: " << arquivo << endl;
         return;
     }
 
     arquivoSaida << "B\tI\tN\tG\tO\n";
-    for (const auto& linha : carta.numeros) {
-        for (int num : linha) {
-            if (num == 0) {
+    for(const auto& linha : carta.numeros){
+        for(int num : linha){
+            if(num == 0){
                 arquivoSaida << "X\t";
-            } else {
+            }else{
                 arquivoSaida << num << "\t";
             }
         }
@@ -47,32 +48,32 @@ void salvarCarta(const CartaBingo& carta, const string& arquivo) {
     arquivoSaida.close();
 }
 
-void exibirTabela(const vector<int>& numerosSorteados) {
+void exibirTabela(const vector<int>& numerosSorteados){
     cout << BOLD << CYAN << "Tabela de Números (1 a 75):\n" << RESET;
-    for (int i = 1; i <= 75; i++) {
-        if (find(numerosSorteados.begin(), numerosSorteados.end(), i) != numerosSorteados.end()) {
+    for(int i = 1; i <= 75; i++){
+        if(find(numerosSorteados.begin(), numerosSorteados.end(), i) != numerosSorteados.end()){
             cout << BOLD << i << RESET << "\t";
-        } else {
+        }else{
             cout << i << "\t";
         }
 
-        if (i % 15 == 0) {
+        if(i % 15 == 0){
             cout << "\n";
         }
     }
     cout << "\n";
 }
 
-void iniciarJogo(bool automatico) {
+void iniciarJogo(bool automatico){
     vector<int> numerosSorteados;
     vector<int> todosNumeros;
 
-    for (int i = 1; i <= 75; i++) {
+    for(int i = 1; i <= 75; i++){
         todosNumeros.push_back(i);
     }
     random_shuffle(todosNumeros.begin(), todosNumeros.end());
 
-    while (!todosNumeros.empty()) {
+    while(!todosNumeros.empty()){
         system("clear");
 
         int numeroAtual = todosNumeros.back();
@@ -81,17 +82,17 @@ void iniciarJogo(bool automatico) {
 
         cout << BOLD << BLUE << "Últimos cinco números sorteados: ";
         int inicio = (numerosSorteados.size() > 5) ? numerosSorteados.size() - 5 : 0;
-        for (int i = numerosSorteados.size() - 1; i >= inicio; i--) {
+        for(int i = numerosSorteados.size() - 1; i >= inicio; i--){
             cout << numerosSorteados[i] << " ";
         }
         cout << RESET << "\n";
 
-        cout << BOLD << MAGENTA << "Número atual sorteado: " << numeroAtual << RESET << "\n\n";
+        cout << BOLD << PINK << "Número atual sorteado: " << numeroAtual << RESET << "\n\n";
         exibirTabela(numerosSorteados);
 
-        if (automatico) {
+        if(automatico){
             this_thread::sleep_for(chrono::seconds(2));
-        } else {
+        }else{
             cout << "Pressione ENTER para sortear o próximo número...";
             cin.ignore();
         }

@@ -3,7 +3,7 @@
 #include "bingo.h"
 #include "jogo.h"
 
-void executarJogo() {
+void executarJogo(){
     srand(time(0));
     int opcao;
     vector<CartaBingo> cartas;
@@ -13,14 +13,14 @@ void executarJogo() {
         exibirMenuPrincipal();
         cin >> opcao;
 
-        if (opcao == 1) {
+        if (opcao == 1){
             system("clear");
             exibirMenuCriarCartas();
             int quantidade;
             cin >> quantidade;
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-            for (int i = 0; i < quantidade; i++) {
+            for(int i = 0; i < quantidade; i++){
                 CartaBingo carta = gerarCarta();
                 string nomeArquivo = "carta_" + to_string(i+1) + ".txt";
                 salvarCarta(carta, nomeArquivo);
@@ -36,18 +36,18 @@ void executarJogo() {
             cin >> opcao;
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-            if (opcao == 1) {
+            if (opcao == 1){
                 iniciarJogo(true);
-            } else if (opcao == 2) {
+            }else if (opcao == 2){
                 iniciarJogo(false);
-            } else {
+            }else{
                 cout << "Opção inválida!";
                 cin.get();
             }
 
-        } else if (opcao == 3) {
+        }else if(opcao == 3){
             break;
-        } else {
+        }else{
             cout << "Opção inválida!";
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cin.get();

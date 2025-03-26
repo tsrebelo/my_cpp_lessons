@@ -3,7 +3,7 @@
 
 #include "bibliotecas.h"
 
-struct CartaBingo {
+struct CartaBingo{
     vector<vector<int>> numeros;
 };
 

@@ -4,6 +4,5 @@
 void exibirMenuPrincipal();
 void exibirMenuCriarCartas();
 void exibirMenuJogo();
-void limparTela();
 
 #endif
