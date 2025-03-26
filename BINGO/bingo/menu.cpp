@@ -1,3 +1,8 @@
+/**
+ * 
+ * 
+ */
+
 #include "bibliotecas.h"
 #include "cores.h"
 #include "menu.h"
