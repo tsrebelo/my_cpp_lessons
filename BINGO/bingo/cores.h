@@ -1,3 +1,8 @@
+/**
+ * @brief Ficheiro que define os códigos de cores para formatação de texto no terminal
+ * 
+ */
+
 #ifndef CORES_H
 #define CORES_H
 

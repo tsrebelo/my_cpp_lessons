@@ -1,3 +1,8 @@
+/**
+ * @brief Ficheiro que faz a inclusão de todas as bibliotecas padrão necessárias
+ * 
+ */
+
 #ifndef BIBLIOTECAS_H
 #define BIBLIOTECAS_H
 

@@ -1,6 +1,7 @@
 /**
  * @brief Ficheiro de declaração dos protótipos das funções relacionadas à lógica do bingo
  */
+
 #ifndef BINGO_H
 #define BINGO_H
 

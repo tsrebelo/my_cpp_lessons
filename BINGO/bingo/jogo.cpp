@@ -1,8 +1,17 @@
+/**
+ * @brief Ficheiro de implementação da função declarada no jogo.h
+ * 
+ */
+
 #include "bibliotecas.h"
 #include "menu.h"
 #include "bingo.h"
 #include "jogo.h"
 
+/**
+ * @brief Função principal que administra o fluxo do programa e a interação com o utilizador
+ * 
+ */
 void executarJogo(){
     srand(time(0));
     int opcao;
